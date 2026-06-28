@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>康杰的项目 · Projects</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='80'%3E📌%3C/text%3E%3C/svg%3E">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+::selection{background:rgba(0,113,227,0.2)}
+:root{--bg:#f5f5f7;--bg-card:#fff;--text:#1d1d1f;--text-sec:#6e6e73;--text-dim:#aeaeb2;--border:#e5e5ea;--accent:#0071e3;--radius:16px;--radius-sm:10px;--shadow:0 4px 24px rgba(0,0,0,.06)}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","PingFang SC","Noto Sans SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+.header{text-align:center;padding:60px 20px 30px}
+.header h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.03em;margin-bottom:8px}
+.header h1 span{background:linear-gradient(135deg,#0071e3,#34c759);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header .sub{font-size:1rem;color:var(--text-sec);max-width:480px;margin:0 auto}
+.header .sub code{background:var(--border);padding:2px 8px;border-radius:6px;font-size:.85rem;color:var(--text)}
+.container{max-width:720px;margin:0 auto;padding:0 20px 40px;flex:1}
+.section-title{font-size:1.1rem;font-weight:700;margin-bottom:16px;color:var(--text-sec);letter-spacing:-.01em}
+.project-grid{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:500px){.project-grid{grid-template-columns:1fr 1fr}}
+.project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-decoration:none;color:inherit;transition:all .25s cubic-bezier(.16,1,.3,1);display:flex;align-items:center;gap:14px}
+.project-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,113,227,.1);border-color:var(--accent)}
+.project-card .icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.project-card .icon.flag{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#ffd700}
+.project-card .icon.english{background:linear-gradient(135deg,#1e3a5f,#2b5c8a);color:#fff}
+.project-card .icon.espana{background:linear-gradient(135deg,#aa151b,#f1bf00);color:#fff}
+.project-card .info{min-width:0}
+.project-card .info h3{font-size:.95rem;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.project-card .info p{font-size:.8rem;color:var(--text-sec);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.project-card .info .badge{display:inline-block;margin-top:4px;padding:1px 8px;border-radius:20px;font-size:.68rem;font-weight:600;background:rgba(0,113,227,.1);color:var(--accent)}
+.project-card .arrow{color:var(--text-dim);font-size:1.1rem;margin-left:auto;flex-shrink:0;transition:transform .25s}
+.project-card:hover .arrow{transform:translateX(4px);color:var(--accent)}
+.project-card.add{opacity:.5;border-style:dashed;cursor:default}
+.project-card.add:hover{transform:none;box-shadow:none;border-color:var(--border)}
+.project-card.add .icon{background:var(--border);color:var(--text-dim);font-size:1.8rem}
+.footer{text-align:center;padding:30px 20px;font-size:.78rem;color:var(--text-dim);border-top:1px solid var(--border)}
+.footer a{color:var(--accent);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <h1><span>康杰</span>的项目</h1>
+  <p class="sub">个人项目导航 · <code>main.skj1023.top</code></p>
+</header>
+
+<div class="container">
+  <h2 class="section-title">📦 项目</h2>
+  <div class="project-grid" id="projectGrid">
+    <!-- FIFA World Cup -->
+    <a href="https://fifa.skj1023.top" target="_blank" rel="noopener" class="project-card" data-tags="fifa,worldcup,世界杯">
+      <div class="icon flag">🏆</div>
+      <div class="info">
+        <h3>2026 FIFA World Cup</h3>
+        <p>美加墨世界杯观赛主页</p>
+        <span class="badge">在线</span>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <!-- English Learning -->
+    <a href="https://english.skj1023.top" target="_blank" rel="noopener" class="project-card" data-tags="english,英语">
+      <div class="icon english">EN</div>
+      <div class="info">
+        <h3>English Learning</h3>
+        <p>英语学习工具与资源</p>
+        <span class="badge">在线</span>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <!-- España -->
+    <a href="https://espana.skj1023.top" target="_blank" rel="noopener" class="project-card" data-tags="espana,西班牙,西语">
+      <div class="icon espana">🇪🇸</div>
+      <div class="info">
+        <h3>España</h3>
+        <p>西班牙语学习与西班牙文化</p>
+        <span class="badge">在线</span>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <!-- Placeholder for future projects -->
+    <div class="project-card add">
+      <div class="icon">＋</div>
+      <div class="info">
+        <h3>更多项目</h3>
+        <p>等待添加中…</p>
+      </div>
+      <span class="arrow">→</span>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p><a href="https://github.com/skj1023">@skj1023</a> · Powered by GitHub Pages</p>
+</footer>
+
+</body>
+</html>
