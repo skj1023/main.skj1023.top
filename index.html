@@ -3,111 +3,274 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>康杰的项目 · Projects</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='80'%3E📌%3C/text%3E%3C/svg%3E">
+<title>Lance App Hub</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230071e3'/%3E%3Ctext x='50' y='67' text-anchor='middle' font-size='52' fill='fff'%3EL%3C/text%3E%3C/svg%3E">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 ::selection{background:rgba(0,113,227,0.2)}
-:root{--bg:#f5f5f7;--bg-card:#fff;--text:#1d1d1f;--text-sec:#6e6e73;--text-dim:#aeaeb2;--border:#e5e5ea;--accent:#0071e3;--radius:16px;--radius-sm:10px;--shadow:0 4px 24px rgba(0,0,0,.06)}
-body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","PingFang SC","Noto Sans SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
-.header{text-align:center;padding:60px 20px 30px}
-.header h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.03em;margin-bottom:8px}
-.header h1 span{background:linear-gradient(135deg,#0071e3,#34c759);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.header .sub{font-size:1rem;color:var(--text-sec);max-width:480px;margin:0 auto}
-.header .sub code{background:var(--border);padding:2px 8px;border-radius:6px;font-size:.85rem;color:var(--text)}
-.container{max-width:720px;margin:0 auto;padding:0 20px 40px;flex:1}
-.section-title{font-size:1.1rem;font-weight:700;margin-bottom:16px;color:var(--text-sec);letter-spacing:-.01em}
-.project-grid{display:grid;grid-template-columns:1fr;gap:10px}
-@media(min-width:500px){.project-grid{grid-template-columns:1fr 1fr}}
-.project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-decoration:none;color:inherit;transition:all .25s cubic-bezier(.16,1,.3,1);display:flex;align-items:center;gap:14px}
-.project-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,113,227,.1);border-color:var(--accent)}
-.project-card .icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
-.project-card .icon.flag{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#ffd700}
-.project-card .icon.english{background:linear-gradient(135deg,#1e3a5f,#2b5c8a);color:#fff}
-.project-card .icon.espana{background:linear-gradient(135deg,#aa151b,#f1bf00);color:#fff}
-.project-card .info{min-width:0}
-.project-card .info h3{font-size:.95rem;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.project-card .info p{font-size:.8rem;color:var(--text-sec);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.project-card .info .badge{display:inline-block;margin-top:4px;padding:1px 8px;border-radius:20px;font-size:.68rem;font-weight:600;background:rgba(0,113,227,.1);color:var(--accent)}
-.project-card .arrow{color:var(--text-dim);font-size:1.1rem;margin-left:auto;flex-shrink:0;transition:transform .25s}
-.project-card:hover .arrow{transform:translateX(4px);color:var(--accent)}
-.project-card.add{opacity:.5;border-style:dashed;cursor:default}
-.project-card.add:hover{transform:none;box-shadow:none;border-color:var(--border)}
-.project-card.add .icon{background:var(--border);color:var(--text-dim);font-size:1.8rem}
-.footer{text-align:center;padding:30px 20px;font-size:.78rem;color:var(--text-dim);border-top:1px solid var(--border)}
+:root{
+  --bg:#f0f2f6;
+  --bg-card:#fffffffa;
+  --text:#1d1d1f;
+  --text-sec:#56565c;
+  --text-dim:#8e8e93;
+  --border:rgba(0,0,0,.08);
+  --accent:#0071e3;
+  --accent2:#34c759;
+  --purple:#af52de;
+  --orange:#ff9f0a;
+  --radius:20px;
+  --radius-sm:12px;
+  --shadow:0 8px 32px rgba(0,0,0,.07);
+  --shadow-hover:0 28px 64px rgba(0,113,227,.14);
+}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","PingFang SC","Noto Sans SC",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ── Background orbs ── */
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;animation:orbFloat 14s ease-in-out infinite alternate}
+.orb-1{width:320px;height:320px;background:rgba(0,113,227,.2);top:-80px;left:-60px}
+.orb-2{width:240px;height:240px;background:rgba(52,199,89,.15);bottom:-40px;right:-30px;animation-delay:-4s;animation-duration:16s}
+.orb-3{width:200px;height:200px;background:rgba(175,82,222,.12);top:50%;left:60%;animation-delay:-8s;animation-duration:18s}
+@keyframes orbFloat{0%{transform:translate(0,0)scale(1)}100%{transform:translate(30px,-30px)scale(1.15)}}
+
+/* ── Layout ── */
+.wrap{max-width:840px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+.header{text-align:center;padding:72px 20px 36px;animation:fadeDown .8s ease both}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-22px)}to{opacity:1;transform:none}}
+.header h1{font-size:clamp(2rem,4.8vw,3.4rem);font-weight:800;letter-spacing:-.035em;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.header h1 .accent{background:linear-gradient(135deg,#0071e3,#5ac8fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header .sub{font-size:1.04rem;color:var(--text-sec);margin-top:6px;animation:fadeDown .8s ease .1s both}
+
+/* ── Filter pills ── */
+.filter-bar{display:flex;justify-content:center;gap:8px;margin-bottom:28px;flex-wrap:wrap;animation:fadeDown .6s ease .18s both}
+.filter-pill{
+  border:none;background:rgba(255,255,255,.6);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  color:var(--text-sec);border-radius:999px;
+  padding:10px 20px;font-size:.92rem;font-weight:550;
+  cursor:pointer;transition:all .25s cubic-bezier(.16,1,.3,1);
+  border:1px solid var(--border);font-family:inherit
+}
+.filter-pill:hover{background:rgba(0,113,227,.08);color:var(--accent);border-color:rgba(0,113,227,.2)}
+.filter-pill.active{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 4px 16px rgba(0,113,227,.3)}
+
+/* ── Featured ── */
+.featured{animation:fadeUp .7s ease .3s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.featured-inner{
+  background:linear-gradient(135deg,#1a2a4a,#2d5a8a);
+  border-radius:var(--radius);padding:28px 32px;
+  margin-bottom:36px;color:#fff;
+  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
+  cursor:pointer;text-decoration:none;
+  transition:all .35s cubic-bezier(.16,1,.3,1);
+  position:relative;overflow:hidden
+}
+.featured-inner::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(255,255,255,.12),transparent 60%);pointer-events:none}
+.featured-inner:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(26,42,74,.35)}
+.featured-inner:active{transform:scale(.97)}
+.featured-inner .label{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;opacity:.7;font-weight:600}
+.featured-inner h2{font-size:clamp(1.2rem,2.2vw,1.5rem);font-weight:700;margin:4px 0 6px}
+.featured-inner p{font-size:.92rem;opacity:.82;max-width:500px;line-height:1.5}
+.featured-inner .action-btn{
+  background:rgba(255,255,255,.15);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.25);border-radius:999px;
+  padding:10px 24px;color:#fff;font-size:.94rem;font-weight:600;
+  transition:all .25s;white-space:nowrap;text-decoration:none;display:inline-block
+}
+.featured-inner:hover .action-btn{background:rgba(255,255,255,.25);transform:scale(1.04)}
+
+/* ── Section ── */
+.section{margin-bottom:40px;animation:fadeUp .7s ease both}
+.section .sec-header{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.section .sec-header .sec-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.section .sec-header h3{font-size:1.12rem;font-weight:650;letter-spacing:-.01em}
+
+/* ── App Grid ── */
+.app-grid{display:grid;gap:12px}
+@media(min-width:600px){.app-grid{grid-template-columns:repeat(2,1fr)}}
+.app-card{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:20px;text-decoration:none;color:inherit;
+  display:grid;grid-template-columns:50px 1fr auto;gap:14px;align-items:center;
+  transition:all .35s cubic-bezier(.16,1,.3,1);
+  cursor:pointer;opacity:0;transform:translateY(14px);
+  animation:cardIn .55s ease forwards
+}
+@keyframes cardIn{to{opacity:1;transform:none}}
+.app-card.hidden{display:none}
+.app-card:hover{transform:translateY(-4px) scale(1.015);box-shadow:var(--shadow-hover);border-color:var(--accent)}
+.app-card:active{transform:scale(.98)}
+.app-card .aicon{
+  width:50px;height:50px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;flex-shrink:0;
+  transition:transform .35s cubic-bezier(.16,1,.3,1)
+}
+.app-card:hover .aicon{transform:scale(1.08) rotate(-4deg)}
+.app-card .info{min-width:0}
+.app-card .info h4{font-size:.98rem;font-weight:650;margin-bottom:2px}
+.app-card .info p{font-size:.82rem;color:var(--text-sec)}
+.app-card .info .tags{display:flex;gap:4px;margin-top:5px;flex-wrap:wrap}
+.app-card .info .tags span{padding:1px 8px;border-radius:999px;font-size:.65rem;font-weight:600;background:rgba(0,113,227,.08);color:var(--accent)}
+.app-card .info .tags span.life{background:rgba(255,159,10,.12);color:#b86800}
+.app-card .info .tags span.learning{background:rgba(52,199,89,.12);color:#1b7a38}
+.app-card .info .tags span.ai{background:rgba(175,82,222,.12);color:#8b3abf}
+.app-card .aarrow{color:var(--text-dim);font-size:1.1rem;transition:transform .25s}
+.app-card:hover .aarrow{transform:translateX(5px);color:var(--accent)}
+.app-card.coming{opacity:.55;cursor:default;animation:cardIn .55s ease forwards}
+.app-card.coming:hover{transform:none;box-shadow:var(--shadow);border-color:var(--border)}
+.app-card.coming .aicon{background:var(--border);color:var(--text-dim);font-size:1.6rem}
+
+/* ── Footer ── */
+.footer{text-align:center;padding:40px 20px;font-size:.82rem;color:var(--text-dim);border-top:1px solid var(--border);margin-top:20px;animation:fadeUp .6s ease .5s both}
 .footer a{color:var(--accent);text-decoration:none}
 .footer a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
 
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
 <header class="header">
-  <h1><span>Lance</span>的应用</h1>
-  <p class="sub">个人应用平台 · <code>main.skj1023.top</code></p>
+  <h1>Lance <span class="accent">App Hub</span></h1>
+  <p class="sub">生活、学习与 AI 信息流的个人应用市场</p>
 </header>
 
-<div class="container">
-  <h2 class="section-title">📦 应用</h2>
-  <div class="project-grid" id="projectGrid">
-    <!-- FIFA World Cup -->
-    <a href="https://fifa.skj1023.top" target="_blank" rel="noopener" class="project-card" data-tags="fifa,worldcup,世界杯">
-      <div class="icon flag">🏆</div>
-      <div class="info">
-        <h3>2026 FIFA World Cup</h3>
-        <p>美加墨世界杯观赛主页</p>
-        <span class="badge">在线</span>
-      </div>
-      <span class="arrow">→</span>
-    </a>
-
-    <!-- English Learning -->
-    <a href="https://english.skj1023.top" target="_blank" rel="noopener" class="project-card" data-tags="english,英语">
-      <div class="icon english">EN</div>
-      <div class="info">
-        <h3>English Learning</h3>
-        <p>英语学习工具与资源</p>
-        <span class="badge">在线</span>
-      </div>
-      <span class="arrow">→</span>
-    </a>
-
-    <!-- España -->
-    <a href="https://espana.skj1023.top" target="_blank" rel="noopener" class="project-card" data-tags="espana,西班牙,西语">
-      <div class="icon espana">🇪🇸</div>
-      <div class="info">
-        <h3>España</h3>
-        <p>西班牙语学习与西班牙文化</p>
-        <span class="badge">在线</span>
-      </div>
-      <span class="arrow">→</span>
-    </a>
-
-    <!-- AI Builders Daily -->
-    <a href="https://builders.skj1023.top/" target="_blank" rel="noopener" class="project-card" data-tags="ai,builders,daily,摘要">
-      <div class="icon" style="background:#f5f4ed;color:#1B365D;font-weight:700">紙</div>
-      <div class="info">
-        <h3>AI Builders Daily</h3>
-        <p>每日追踪 AI builders 的高密度摘要</p>
-        <span class="badge">新</span>
-      </div>
-      <span class="arrow">→</span>
-    </a>
-
-    <!-- Placeholder for future projects -->
-    <div class="project-card add">
-      <div class="icon">＋</div>
-      <div class="info">
-        <h3>更多应用</h3>
-        <p>等待添加中…</p>
-      </div>
-      <span class="arrow">→</span>
-    </div>
+<div class="wrap">
+  <!-- Filter -->
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-pill active" data-cat="all">全部</button>
+    <button class="filter-pill" data-cat="life">生活与文化</button>
+    <button class="filter-pill" data-cat="learn">学习成长</button>
+    <button class="filter-pill" data-cat="ai">AI 信息流</button>
   </div>
+
+  <!-- Featured -->
+  <a href="https://builders.skj1023.top/" target="_blank" rel="noopener" class="featured" id="featured">
+    <div class="featured-inner">
+      <div>
+        <div class="label">今日推荐</div>
+        <h2>AI Builders Daily</h2>
+        <p>每日筛选一线 AI Builders 的观点、文章和播客，过滤噪音，提炼高信号内容。</p>
+      </div>
+      <span class="action-btn">打开应用 →</span>
+    </div>
+  </a>
+
+  <!-- App sections rendered by JS -->
+  <div id="appSections"></div>
 </div>
 
 <footer class="footer">
-  <p>Powered by GitHub Pages</p>
+  <p>Lance App Hub · Personal apps for life, learning and AI signals · Hosted on GitHub Pages</p>
 </footer>
 
+<script>
+const apps = [
+  {
+    id:'fifa', cat:'life', catLabel:'生活与文化',
+    title:'2026 FIFA World Cup',
+    desc:'美加墨世界杯观赛主页',
+    url:'https://fifa.skj1023.top',
+    icon:'🏆', iconBg:'linear-gradient(135deg,#1a1a2e,#16213e)', iconClr:'#ffd700',
+    tags:['体育','2026'], tagType:'life',
+    badge:'在线', featured:false
+  },
+  {
+    id:'espana', cat:'life', catLabel:'生活与文化',
+    title:'España',
+    desc:'西班牙语学习与西班牙文化',
+    url:'https://espana.skj1023.top',
+    icon:'🇪🇸', iconBg:'linear-gradient(135deg,#aa151b,#f1bf00)', iconClr:'#fff',
+    tags:['西语','文化'], tagType:'life',
+    badge:'在线', featured:false
+  },
+  {
+    id:'english', cat:'learn', catLabel:'学习成长',
+    title:'English Learning',
+    desc:'英语学习工具与资源',
+    url:'https://english.skj1023.top',
+    icon:'EN', iconBg:'linear-gradient(135deg,#1e3a5f,#2b5c8a)', iconClr:'#fff',
+    tags:['English','语言'], tagType:'learning',
+    badge:'在线', featured:false
+  },
+  {
+    id:'builders', cat:'ai', catLabel:'AI 信息流',
+    title:'AI Builders Daily',
+    desc:'每日 AI Builders 高信号内容简报',
+    url:'https://builders.skj1023.top/',
+    icon:'紙', iconBg:'#f5f4ed', iconClr:'#1B365D',
+    tags:['每日更新'], tagType:'ai',
+    badge:'新', featured:true
+  }
+];
+
+const sections = [
+  {id:'life', label:'生活与文化', icon:'🎯', color:'#ff9f0a'},
+  {id:'learn', label:'学习成长', icon:'📖', color:'#34c759'},
+  {id:'ai', label:'AI 信息流', icon:'🧠', color:'#af52de'}
+];
+
+let activeCat = 'all';
+
+function render() {
+  const container = document.getElementById('appSections');
+  let html = '';
+  
+  sections.forEach(s => {
+    const items = apps.filter(a => a.cat === s.id && activeCat === 'all' || activeCat === a.cat);
+    if (activeCat !== 'all' && activeCat !== s.id && activeCat !== 'all') return;
+    if (items.length === 0) return;
+    
+    html += `<div class="section" style="animation-delay:.2s">`;
+    html += `<div class="sec-header"><div class="sec-icon" style="background:${s.color}22;color:${s.color}">${s.icon}</div><h3>${s.label}</h3></div>`;
+    html += `<div class="app-grid">`;
+    
+    items.forEach((a, i) => {
+      const isComing = a.id === 'coming';
+      const delay = 0.2 + i * 0.06;
+      html += `<a href="${isComing ? '#' : a.url}" target="${isComing ? '' : '_blank'}" rel="${isComing ? '' : 'noopener'}" class="app-card ${isComing ? 'coming' : ''}" style="animation-delay:${delay}s" data-id="${a.id}" data-cat="${a.cat}">`;
+      html += `<div class="aicon" style="background:${a.iconBg};color:${a.iconClr}">${a.icon}</div>`;
+      html += `<div class="info"><h4>${a.title}</h4><p>${a.desc}</p><div class="tags">`;
+      (a.tags||[]).forEach(t => { html += `<span class="${a.tagType||''}">${t}</span>`; });
+      if (a.badge) { html += `<span class="${a.tagType||''}">${a.badge}</span>`; }
+      html += `</div></div><span class="aarrow">${isComing ? '' : '→'}</span>`;
+      html += `</a>`;
+    });
+    
+    html += `</div></div>`;
+  });
+  
+  // Coming Soon
+  html += `<div class="section" style="animation-delay:.3s"><div class="sec-header"><div class="sec-icon" style="background:rgba(142,142,147,.15);color:#8e8e93">⋯</div><h3 style="color:var(--text-dim)">即将上线</h3></div><div class="app-grid"><a class="app-card coming"><div class="aicon">＋</div><div class="info"><h4>更多应用</h4><p>新的个人应用正在规划或开发中</p></div></a></div></div>`;
+  
+  container.innerHTML = html;
+}
+
+// Filter
+document.querySelectorAll('.filter-pill').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeCat = btn.dataset.cat;
+    render();
+    // reset scroll position smoothly
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+});
+
+render();
+</script>
 </body>
 </html>
