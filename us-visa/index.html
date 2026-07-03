@@ -14,7 +14,62 @@
     *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--paper)}body{margin:0;background:radial-gradient(circle at 12% -4%,rgba(27,54,93,.08),transparent 34%),linear-gradient(180deg,var(--paper),#f0eee4 56%,var(--paper));color:var(--text);font-family:var(--sans);line-height:1.74;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.32;background-image:linear-gradient(rgba(27,54,93,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(27,54,93,.025) 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(to bottom,black,transparent 68%)}a{color:var(--ink)}.hero{position:relative;padding:58px 22px 34px;border-bottom:1px solid var(--line);overflow:hidden}.hero::after{content:"紙";position:absolute;right:clamp(20px,8vw,120px);top:18px;font-family:var(--serif);font-size:128px;color:rgba(27,54,93,.045);line-height:1;pointer-events:none}.wrap{max-width:1120px;margin:0 auto;position:relative}.eyebrow{color:var(--ink);font-weight:750;letter-spacing:.12em;font-size:12px;text-transform:uppercase}.hero h1{font-family:var(--serif);font-size:clamp(34px,6vw,58px);letter-spacing:-.04em;line-height:1.05;margin:12px 0 16px;color:#171713;font-weight:650}.hero p{max-width:820px;color:var(--muted);font-size:clamp(15px,2vw,17px);margin:0}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.pill{border:1px solid var(--line);background:rgba(250,249,245,.76);backdrop-filter:blur(12px);border-radius:999px;padding:7px 12px;color:#575248;font-size:13px}.grid{display:grid;grid-template-columns:284px minmax(0,1fr);gap:24px;padding:26px 22px 76px}.toc{position:sticky;top:18px;align-self:start;background:rgba(250,249,245,.84);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--shadow)}.toc h2{font-size:14px;margin:0 0 10px;color:var(--ink);letter-spacing:.05em}.toc a{display:block;text-decoration:none;color:#43443f;padding:9px 10px;border-radius:12px;font-size:14px;transition:background .18s,color .18s,transform .18s}.toc a:hover{background:#f0eee4;color:var(--ink);transform:translateX(2px)}.content{min-width:0}.section{background:rgba(250,249,245,.92);border:1px solid var(--line);border-radius:24px;padding:clamp(20px,3vw,30px);margin-bottom:22px;box-shadow:var(--shadow);scroll-margin-top:22px}.section h2{font-family:var(--serif);color:var(--ink);font-size:clamp(23px,3.2vw,30px);letter-spacing:-.02em;line-height:1.22;margin:0 0 16px;font-weight:650}.section h3{font-size:17px;color:var(--ink-2);margin:20px 0 8px}.lead{color:var(--muted);margin-top:-6px}.badge{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:3px 9px;font-size:12px;border:1px solid var(--line);background:#fffdf7;margin-left:8px;vertical-align:middle;white-space:nowrap}.must{color:var(--danger)}.optional{color:var(--warn)}.after{color:var(--ok)}.steps{counter-reset:step;display:grid;gap:12px;margin:18px 0 0}.step{counter-increment:step;display:grid;grid-template-columns:44px 1fr;gap:14px;border:1px solid var(--line);background:var(--card-strong);border-radius:18px;padding:16px;transition:transform .2s,box-shadow .2s,border-color .2s}.step:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(27,54,93,.07);border-color:var(--line-strong)}.step::before{content:counter(step);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:white;font-weight:800}.step h3{margin:0 0 4px;font-size:17px}.step p{margin:0;color:var(--muted);font-size:14px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{border:1px solid var(--line);border-radius:18px;padding:17px;background:var(--card-strong)}.card h3{margin-top:0}.checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}.check{display:flex;gap:10px;align-items:flex-start;background:var(--card-strong);border:1px solid var(--line);border-radius:14px;padding:10px 12px;font-size:14px;min-height:48px}.check input{margin-top:5px;accent-color:var(--ink);width:16px;height:16px}.note{background:#fff8e1;border-left:4px solid #d99300;border-radius:13px;padding:13px 15px;margin:14px 0;color:#4f3b12}.oknote{background:#eef7ee;border-left-color:#3f8f46}.danger{background:#fff0ed;border-left-color:#c23b2a}.timeline{width:100%;border-collapse:separate;border-spacing:0;margin-top:12px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card-strong)}.timeline th,.timeline td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top}.timeline tr:last-child td{border-bottom:0}.timeline th:last-child,.timeline td:last-child{border-right:0}.timeline th{background:#f0eee4;color:var(--ink);font-weight:750}.timeline td:first-child{font-weight:750;color:#37455f;white-space:nowrap}.file{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#f1efe6;border:1px solid var(--line);border-radius:7px;padding:1px 6px;font-size:12px;color:#31445e}.small{font-size:13px;color:var(--muted)}.printbar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 0}.btn{appearance:none;border:0;background:var(--ink);color:white;border-radius:999px;padding:10px 15px;font-weight:750;cursor:pointer;font-family:var(--sans);box-shadow:0 8px 18px rgba(27,54,93,.16)}.btn.secondary{background:#fffdf8;color:var(--ink);border:1px solid var(--line);box-shadow:none}.btn:active{transform:translateY(1px)}
     @media(max-width:920px){.grid{grid-template-columns:1fr;padding:18px 14px 56px}.toc{position:relative;top:0;display:flex;gap:8px;overflow:auto;padding:12px;border-radius:18px;scroll-snap-type:x proximity}.toc h2{display:none}.toc a{white-space:nowrap;background:#f0eee4;scroll-snap-align:start}.cards,.checklist{grid-template-columns:1fr}.section{border-radius:20px}.hero{padding:42px 18px 26px}.hero::after{font-size:92px;right:10px;top:12px}.timeline{display:block;overflow-x:auto;white-space:normal}.timeline th,.timeline td{min-width:160px}.timeline td:first-child{position:sticky;left:0;background:var(--card-strong);z-index:1}.timeline th:first-child{position:sticky;left:0;background:#f0eee4;z-index:2}}
     @media(max-width:520px){.hero h1{max-width:330px}.meta{gap:7px}.pill{font-size:12px;padding:6px 10px}.printbar .btn{width:100%;justify-content:center}.step{grid-template-columns:36px 1fr;padding:13px}.step::before{width:30px;height:30px;font-size:13px}.check{font-size:13.5px}.section h3{font-size:16px}.badge{margin-left:0;margin-top:6px}.hero p{font-size:14px}}
-    @media print{body{background:white}.toc,.printbar,body::before{display:none}.grid{display:block;padding:0}.section{box-shadow:none;break-inside:avoid;background:white}.hero{padding:20px 0}.wrap{max-width:none}.check input{display:none}.timeline{display:table}.hero::after{display:none}}
+
+    /* ── Mobile floating nav ── */
+    .nav-fab{display:none}.nav-overlay{display:none}
+    @media(max-width:920px){
+      .nav-fab{
+        display:flex;position:fixed;bottom:24px;right:18px;z-index:999;
+        width:52px;height:52px;border-radius:50%;
+        background:var(--ink);color:#fff;border:0;cursor:pointer;
+        align-items:center;justify-content:center;
+        font-size:22px;font-weight:700;
+        box-shadow:0 8px 28px rgba(27,54,93,.28);
+        transition:transform .2s,box-shadow .2s;
+        -webkit-tap-highlight-color:transparent;
+      }
+      .nav-fab:active{transform:scale(.92);box-shadow:0 4px 14px rgba(27,54,93,.2)}
+      .nav-overlay{
+        display:none;position:fixed;inset:0;z-index:1000;
+        background:rgba(20,19,16,.5);
+        backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+        animation:ovFade .2s ease
+      }
+      @keyframes ovFade{from{opacity:0}to{opacity:1}}
+      .nav-sheet{
+        position:fixed;bottom:0;left:0;right:0;z-index:1001;
+        background:var(--card);border-radius:22px 22px 0 0;
+        padding:16px 18px 28px;max-height:68vh;overflow-y:auto;
+        box-shadow:0 -10px 40px rgba(0,0,0,.12);
+        animation:sheetUp .3s cubic-bezier(.16,1,.3,1)
+      }
+      @keyframes sheetUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+      .nav-sheet .handle{
+        width:36px;height:4px;border-radius:4px;background:var(--line-strong);
+        margin:0 auto 14px
+      }
+      .nav-sheet h2{
+        font-size:15px;color:var(--ink);margin:0 0 12px;
+        font-family:var(--serif);letter-spacing:.04em
+      }
+      .nav-sheet a{
+        display:flex;align-items:center;gap:10px;padding:11px 12px;
+        border-radius:14px;text-decoration:none;color:var(--text);
+        font-size:15px;transition:background .15s,color .15s
+      }
+      .nav-sheet a:hover,.nav-sheet a:active{background:rgba(27,54,93,.07);color:var(--ink)}
+      .nav-sheet a .num{
+        width:26px;height:26px;border-radius:50%;
+        display:grid;place-items:center;
+        background:rgba(27,54,93,.08);color:var(--ink);
+        font-size:12px;font-weight:800;flex-shrink:0
+      }
+      .nav-sheet a:active .num{background:var(--ink);color:#fff}
+      .nav-overlay.open,.nav-overlay.open .nav-sheet{display:block}
+      .nav-overlay.open{display:block}
+    }
+    @media(min-width:921px){.nav-fab,.nav-overlay{display:none!important}}
+    @media print{body{background:white}.toc,.printbar,.nav-fab,.nav-overlay,body::before{display:none!important}.grid{display:block;padding:0}.section{box-shadow:none;break-inside:avoid;background:white}.hero{padding:20px 0}.wrap{max-width:none}.check input{display:none}.timeline{display:table}.hero::after{display:none}}
 
   </style>
 </head>
@@ -247,5 +302,34 @@
       </section>
     </main>
   </div>
+<!-- Mobile floating nav -->
+<button class="nav-fab" id="navFab" aria-label="打开目录">☰</button>
+<div class="nav-overlay" id="navOverlay">
+  <div class="nav-sheet">
+    <div class="handle"></div>
+    <h2>目录</h2>
+    <a href="#flow" data-close-nav><span class="num">一</span>总流程排序</a>
+    <a href="#decision" data-close-nav><span class="num">二</span>先判断申请路径</a>
+    <a href="#phase1" data-close-nav><span class="num">三</span>基础材料先准备</a>
+    <a href="#phase2" data-close-nav><span class="num">四</span>DS-160 信息准备</a>
+    <a href="#phase3" data-close-nav><span class="num">五</span>支撑材料准备</a>
+    <a href="#submit" data-close-nav><span class="num">六</span>提交/预约/递签</a>
+    <a href="#interview" data-close-nav><span class="num">七</span>面签当天</a>
+    <a href="#after" data-close-nav><span class="num">八</span>获签后</a>
+    <a href="#files" data-close-nav><span class="num">九</span>文件对应关系</a>
+  </div>
+</div>
+<script>
+(function(){
+  var fab=document.getElementById('navFab');
+  var ov=document.getElementById('navOverlay');
+  if(!fab||!ov)return;
+  fab.addEventListener('click',function(e){e.stopPropagation();ov.classList.toggle('open')});
+  ov.addEventListener('click',function(e){if(e.target===ov)ov.classList.remove('open')});
+  document.querySelectorAll('[data-close-nav]').forEach(function(el){
+    el.addEventListener('click',function(){ov.classList.remove('open')});
+  });
+})();
+</script>
 </body>
 </html>
