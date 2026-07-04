@@ -3,283 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Lance App Hub</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230071e3'/%3E%3Ctext x='50' y='67' text-anchor='middle' font-size='52' fill='fff'%3EL%3C/text%3E%3C/svg%3E">
+<title>Lance App Hub · Lance OS</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230071e3'/%3E%3Ctext x='50' y='67' text-anchor='middle' font-size='52' fill='white'%3EL%3C/text%3E%3C/svg%3E">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 ::selection{background:rgba(0,113,227,0.2)}
-:root{
-  --bg:#f0f2f6;
-  --bg-card:#fffffffa;
-  --text:#1d1d1f;
-  --text-sec:#56565c;
-  --text-dim:#8e8e93;
-  --border:rgba(0,0,0,.08);
-  --accent:#0071e3;
-  --accent2:#34c759;
-  --purple:#af52de;
-  --orange:#ff9f0a;
-  --radius:20px;
-  --radius-sm:12px;
-  --shadow:0 8px 32px rgba(0,0,0,.07);
-  --shadow-hover:0 28px 64px rgba(0,113,227,.14);
-}
-body{
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","PingFang SC","Noto Sans SC",sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-  min-height:100vh;
-  overflow-x:hidden;
-}
-
-/* ── Background orbs ── */
-.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;animation:orbFloat 14s ease-in-out infinite alternate}
-.orb-1{width:320px;height:320px;background:rgba(0,113,227,.2);top:-80px;left:-60px}
-.orb-2{width:240px;height:240px;background:rgba(52,199,89,.15);bottom:-40px;right:-30px;animation-delay:-4s;animation-duration:16s}
-.orb-3{width:200px;height:200px;background:rgba(175,82,222,.12);top:50%;left:60%;animation-delay:-8s;animation-duration:18s}
-@keyframes orbFloat{0%{transform:translate(0,0)scale(1)}100%{transform:translate(30px,-30px)scale(1.15)}}
-
-/* ── Layout ── */
-.wrap{max-width:840px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
-.header{text-align:center;padding:72px 20px 36px;animation:fadeDown .8s ease both}
-@keyframes fadeDown{from{opacity:0;transform:translateY(-22px)}to{opacity:1;transform:none}}
-.header h1{font-size:clamp(2rem,4.8vw,3.4rem);font-weight:800;letter-spacing:-.035em;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-.header h1 .accent{background:linear-gradient(135deg,#0071e3,#5ac8fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.header .sub{font-size:1.04rem;color:var(--text-sec);margin-top:6px;animation:fadeDown .8s ease .1s both}
-
-/* ── Filter pills ── */
-.filter-bar{display:flex;justify-content:center;gap:8px;margin-bottom:28px;flex-wrap:wrap;animation:fadeDown .6s ease .18s both}
-.filter-pill{
-  border:none;background:rgba(255,255,255,.6);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  color:var(--text-sec);border-radius:999px;
-  padding:10px 20px;font-size:.92rem;font-weight:550;
-  cursor:pointer;transition:all .25s cubic-bezier(.16,1,.3,1);
-  border:1px solid var(--border);font-family:inherit
-}
-.filter-pill:hover{background:rgba(0,113,227,.08);color:var(--accent);border-color:rgba(0,113,227,.2)}
-.filter-pill.active{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 4px 16px rgba(0,113,227,.3)}
-
-/* ── Featured ── */
-.featured{animation:fadeUp .7s ease .3s both}
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.featured-inner{
-  background:linear-gradient(135deg,#1a2a4a,#2d5a8a);
-  border-radius:var(--radius);padding:28px 32px;
-  margin-bottom:36px;color:#fff;
-  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
-  cursor:pointer;text-decoration:none;
-  transition:all .35s cubic-bezier(.16,1,.3,1);
-  position:relative;overflow:hidden
-}
-.featured-inner::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(255,255,255,.12),transparent 60%);pointer-events:none}
-.featured-inner:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(26,42,74,.35)}
-.featured-inner:active{transform:scale(.97)}
-.featured-inner .label{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;opacity:.7;font-weight:600}
-.featured-inner h2{font-size:clamp(1.2rem,2.2vw,1.5rem);font-weight:700;margin:4px 0 6px}
-.featured-inner p{font-size:.92rem;opacity:.82;max-width:500px;line-height:1.5}
-.featured-inner .action-btn{
-  background:rgba(255,255,255,.15);backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.25);border-radius:999px;
-  padding:10px 24px;color:#fff;font-size:.94rem;font-weight:600;
-  transition:all .25s;white-space:nowrap;text-decoration:none;display:inline-block
-}
-.featured-inner:hover .action-btn{background:rgba(255,255,255,.25);transform:scale(1.04)}
-
-/* ── Section ── */
-.section{margin-bottom:40px;animation:fadeUp .7s ease both}
-.section .sec-header{display:flex;align-items:center;gap:8px;margin-bottom:16px}
-.section .sec-header .sec-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.section .sec-header h3{font-size:1.12rem;font-weight:650;letter-spacing:-.01em}
-
-/* ── App Grid ── */
-.app-grid{display:grid;gap:12px}
-@media(min-width:600px){.app-grid{grid-template-columns:repeat(2,1fr)}}
-.app-card{
-  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
-  padding:20px;text-decoration:none;color:inherit;
-  display:grid;grid-template-columns:50px 1fr auto;gap:14px;align-items:center;
-  transition:all .35s cubic-bezier(.16,1,.3,1);
-  cursor:pointer;opacity:0;transform:translateY(14px);
-  animation:cardIn .55s ease forwards
-}
-@keyframes cardIn{to{opacity:1;transform:none}}
-.app-card.hidden{display:none}
-.app-card:hover{transform:translateY(-4px) scale(1.015);box-shadow:var(--shadow-hover);border-color:var(--accent)}
-.app-card:active{transform:scale(.98)}
-.app-card .aicon{
-  width:50px;height:50px;border-radius:14px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.5rem;flex-shrink:0;
-  transition:transform .35s cubic-bezier(.16,1,.3,1)
-}
-.app-card:hover .aicon{transform:scale(1.08) rotate(-4deg)}
-.app-card .info{min-width:0}
-.app-card .info h4{font-size:.98rem;font-weight:650;margin-bottom:2px}
-.app-card .info p{font-size:.82rem;color:var(--text-sec)}
-.app-card .info .tags{display:flex;gap:4px;margin-top:5px;flex-wrap:wrap}
-.app-card .info .tags span{padding:1px 8px;border-radius:999px;font-size:.65rem;font-weight:600;background:rgba(0,113,227,.08);color:var(--accent)}
-.app-card .info .tags span.life{background:rgba(255,159,10,.12);color:#b86800}
-.app-card .info .tags span.learning{background:rgba(52,199,89,.12);color:#1b7a38}
-.app-card .info .tags span.ai{background:rgba(175,82,222,.12);color:#8b3abf}
-.app-card .aarrow{color:var(--text-dim);font-size:1.1rem;transition:transform .25s}
-.app-card:hover .aarrow{transform:translateX(5px);color:var(--accent)}
-.app-card.coming{opacity:.55;cursor:default;animation:cardIn .55s ease forwards}
-.app-card.coming:hover{transform:none;box-shadow:var(--shadow);border-color:var(--border)}
-.app-card.coming .aicon{background:var(--border);color:var(--text-dim);font-size:1.6rem}
-
-/* ── Footer ── */
-.footer{text-align:center;padding:40px 20px;font-size:.82rem;color:var(--text-dim);border-top:1px solid var(--border);margin-top:20px;animation:fadeUp .6s ease .5s both}
-.footer a{color:var(--accent);text-decoration:none}
-.footer a:hover{text-decoration:underline}
+:root{--bg:#f0f2f6;--bg-card:#fffffffa;--text:#1d1d1f;--text-sec:#56565c;--text-dim:#8e8e93;--border:rgba(0,0,0,.08);--accent:#0071e3;--accent2:#34c759;--purple:#af52de;--orange:#ff9f0a;--radius:20px;--radius-sm:12px;--shadow:0 8px 32px rgba(0,0,0,.07);--shadow-hover:0 28px 64px rgba(0,113,227,.14);--glass:rgba(255,255,255,.16);--glass-border:rgba(255,255,255,.24)}
+html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","PingFang SC","Noto Sans SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}body.os-active{overflow:hidden;background:#050711}button,a{font:inherit}button{cursor:pointer}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;animation:orbFloat 14s ease-in-out infinite alternate}.orb-1{width:320px;height:320px;background:rgba(0,113,227,.2);top:-80px;left:-60px}.orb-2{width:240px;height:240px;background:rgba(52,199,89,.15);bottom:-40px;right:-30px;animation-delay:-4s;animation-duration:16s}.orb-3{width:200px;height:200px;background:rgba(175,82,222,.12);top:50%;left:60%;animation-delay:-8s;animation-duration:18s}@keyframes orbFloat{0%{transform:translate(0,0)scale(1)}100%{transform:translate(30px,-30px)scale(1.15)}}
+.wrap{max-width:840px;margin:0 auto;padding:0 20px;position:relative;z-index:1}.header{text-align:center;padding:72px 20px 36px;animation:fadeDown .8s ease both;position:relative;z-index:1}@keyframes fadeDown{from{opacity:0;transform:translateY(-22px)}to{opacity:1;transform:none}}.header h1{font-size:clamp(2rem,4.8vw,3.4rem);font-weight:800;letter-spacing:-.035em;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}.header h1 .accent{background:linear-gradient(135deg,#0071e3,#5ac8fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.header .sub{font-size:1.04rem;color:var(--text-sec);margin-top:6px;animation:fadeDown .8s ease .1s both}.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px;animation:fadeDown .8s ease .18s both}
+.os-power-btn{position:relative;border:1px solid rgba(0,113,227,.22);border-radius:999px;padding:11px 18px;color:#fff;background:linear-gradient(135deg,#0f172a,#1d4ed8 55%,#0ea5e9);box-shadow:0 16px 40px rgba(0,113,227,.22),inset 0 1px 0 rgba(255,255,255,.24);display:inline-flex;align-items:center;gap:9px;font-weight:700;letter-spacing:-.01em;overflow:hidden;transition:transform .28s cubic-bezier(.16,1,.3,1),box-shadow .28s}.os-power-btn::before{content:"";position:absolute;inset:-2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);transform:translateX(-120%);transition:transform .75s ease}.os-power-btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 24px 56px rgba(0,113,227,.32)}.os-power-btn:hover::before{transform:translateX(120%)}.os-power-btn .power-glyph{width:24px;height:24px;border-radius:50%;display:inline-grid;place-items:center;background:rgba(255,255,255,.18);font-size:.95rem}
+.filter-bar{display:flex;justify-content:center;gap:8px;margin-bottom:28px;flex-wrap:wrap;animation:fadeDown .6s ease .18s both}.filter-pill{border:none;background:rgba(255,255,255,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--text-sec);border-radius:999px;padding:10px 20px;font-size:.92rem;font-weight:550;cursor:pointer;transition:all .25s cubic-bezier(.16,1,.3,1);border:1px solid var(--border)}.filter-pill:hover{background:rgba(0,113,227,.08);color:var(--accent);border-color:rgba(0,113,227,.2)}.filter-pill.active{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 4px 16px rgba(0,113,227,.3)}
+.featured{animation:fadeUp .7s ease .3s both}@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.featured-inner{background:linear-gradient(135deg,#1a2a4a,#2d5a8a);border-radius:var(--radius);padding:28px 32px;margin-bottom:36px;color:#fff;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;cursor:pointer;text-decoration:none;transition:all .35s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}.featured-inner::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(255,255,255,.12),transparent 60%);pointer-events:none}.featured-inner:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(26,42,74,.35)}.featured-inner:active{transform:scale(.97)}.featured-inner .label{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;opacity:.7;font-weight:600}.featured-inner h2{font-size:clamp(1.2rem,2.2vw,1.5rem);font-weight:700;margin:4px 0 6px}.featured-inner p{font-size:.92rem;opacity:.82;max-width:500px;line-height:1.5}.featured-inner .action-btn{background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:10px 24px;color:#fff;font-size:.94rem;font-weight:600;transition:all .25s;white-space:nowrap;text-decoration:none;display:inline-block}.featured-inner:hover .action-btn{background:rgba(255,255,255,.25);transform:scale(1.04)}
+.section{margin-bottom:40px;animation:fadeUp .7s ease both}.section .sec-header{display:flex;align-items:center;gap:8px;margin-bottom:16px}.section .sec-header .sec-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}.section .sec-header h3{font-size:1.12rem;font-weight:650;letter-spacing:-.01em}.app-grid{display:grid;gap:12px}@media(min-width:600px){.app-grid{grid-template-columns:repeat(2,1fr)}}.app-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-decoration:none;color:inherit;display:grid;grid-template-columns:50px 1fr auto;gap:14px;align-items:center;transition:all .35s cubic-bezier(.16,1,.3,1);cursor:pointer;opacity:0;transform:translateY(14px);animation:cardIn .55s ease forwards}@keyframes cardIn{to{opacity:1;transform:none}}.app-card:hover{transform:translateY(-4px) scale(1.015);box-shadow:var(--shadow-hover);border-color:var(--accent)}.app-card:active{transform:scale(.98)}.app-card .aicon{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;transition:transform .35s cubic-bezier(.16,1,.3,1);font-weight:800;letter-spacing:-.04em}.app-card:hover .aicon{transform:scale(1.08) rotate(-4deg)}.app-card .info{min-width:0}.app-card .info h4{font-size:.98rem;font-weight:650;margin-bottom:2px}.app-card .info p{font-size:.82rem;color:var(--text-sec)}.app-card .info .tags{display:flex;gap:4px;margin-top:5px;flex-wrap:wrap}.app-card .info .tags span{padding:1px 8px;border-radius:999px;font-size:.65rem;font-weight:600;background:rgba(0,113,227,.08);color:var(--accent)}.app-card .info .tags span.life{background:rgba(255,159,10,.12);color:#b86800}.app-card .info .tags span.learning{background:rgba(52,199,89,.12);color:#1b7a38}.app-card .info .tags span.ai{background:rgba(175,82,222,.12);color:#8b3abf}.app-card .aarrow{color:var(--text-dim);font-size:1.1rem;transition:transform .25s}.app-card:hover .aarrow{transform:translateX(5px);color:var(--accent)}.app-card.coming{opacity:.55;cursor:default;animation:cardIn .55s ease forwards}.app-card.coming:hover{transform:none;box-shadow:var(--shadow);border-color:var(--border)}.app-card.coming .aicon{background:var(--border);color:var(--text-dim);font-size:1.6rem}.footer{text-align:center;padding:40px 20px;font-size:.82rem;color:var(--text-dim);border-top:1px solid var(--border);margin-top:20px;animation:fadeUp .6s ease .5s both;position:relative;z-index:1}.footer a{color:var(--accent);text-decoration:none}.footer a:hover{text-decoration:underline}
+.boot-screen,.lance-os{position:fixed;inset:0;z-index:1000;display:none;color:#fff}.boot-screen.active,.lance-os.active{display:block}.boot-screen{background:#03050b;place-items:center;text-align:center;overflow:hidden}.boot-screen.active{display:grid;animation:bootFade .32s ease both}.boot-screen::before{content:"";position:absolute;inset:-15%;background:radial-gradient(circle at 50% 42%,rgba(90,200,250,.16),transparent 28%),radial-gradient(circle at 42% 55%,rgba(175,82,222,.12),transparent 34%);filter:blur(10px)}.boot-card{position:relative;width:min(360px,82vw);display:grid;justify-items:center;gap:18px;animation:bootRise .55s cubic-bezier(.16,1,.3,1) both}.boot-mark{width:78px;height:78px;border-radius:23px;background:linear-gradient(145deg,#f8fbff,#c7ddff 58%,#78a9ff);color:#111827;display:grid;place-items:center;font-size:2.35rem;font-weight:900;box-shadow:0 24px 90px rgba(90,200,250,.28),inset 0 1px 0 #fff}.boot-card h2{font-size:1.4rem;font-weight:760;letter-spacing:-.03em}.boot-card p{font-size:.86rem;color:rgba(255,255,255,.62);font-family:"SF Mono","JetBrains Mono",Consolas,monospace}.boot-bar{width:100%;height:6px;border-radius:999px;background:rgba(255,255,255,.13);overflow:hidden;border:1px solid rgba(255,255,255,.1)}.boot-bar span{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#60a5fa,#a78bfa,#34d399);animation:bootLoad 1.85s cubic-bezier(.16,1,.3,1) forwards}@keyframes bootFade{from{opacity:0}to{opacity:1}}@keyframes bootRise{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}@keyframes bootLoad{to{width:100%}}
+.lance-os{background:#050711;overflow:hidden;font-size:14px}.lance-os.active{animation:desktopIn .42s ease both}@keyframes desktopIn{from{opacity:0;transform:scale(1.01)}to{opacity:1;transform:none}}.os-wallpaper{position:absolute;inset:0;background:radial-gradient(circle at 18% 20%,rgba(90,200,250,.38),transparent 24%),radial-gradient(circle at 70% 25%,rgba(175,82,222,.35),transparent 28%),radial-gradient(circle at 58% 82%,rgba(52,211,153,.27),transparent 26%),linear-gradient(135deg,#07101f 0%,#1e1b4b 42%,#05151d 100%);overflow:hidden}.os-wallpaper::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.62) .65px, transparent .65px);background-size:42px 42px;opacity:.17;mask-image:linear-gradient(to bottom,rgba(0,0,0,.65),transparent 82%)}.os-wallpaper::after{content:"";position:absolute;inset:-30%;background:conic-gradient(from 180deg at 50% 50%,transparent,rgba(255,255,255,.06),transparent,rgba(90,200,250,.09),transparent);animation:aurora 22s linear infinite;filter:blur(20px);opacity:.9}@keyframes aurora{to{transform:rotate(1turn)}}.os-menu{position:absolute;top:0;left:0;right:0;height:34px;padding:0 14px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,8,18,.48);border-bottom:1px solid rgba(255,255,255,.14);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);z-index:20;color:rgba(255,255,255,.88);user-select:none}.os-menu-left,.os-menu-right{display:flex;align-items:center;gap:16px}.apple-mark{font-size:1.05rem;font-weight:800}.os-menu strong{font-weight:760}.menu-item{font-size:.82rem;opacity:.86}.menu-item.btn-like{border:0;background:transparent;color:inherit;padding:5px 8px;border-radius:8px}.menu-item.btn-like:hover{background:rgba(255,255,255,.12)}.os-clock{font-size:.82rem;font-variant-numeric:tabular-nums}.traffic-mini{display:flex;gap:6px}.traffic-mini span{width:9px;height:9px;border-radius:50%;display:block}.red{background:#ff5f57}.yellow{background:#ffbd2e}.green{background:#28c840}.os-desktop{position:absolute;inset:34px 0 0;display:grid;grid-template-columns:1fr;grid-template-rows:1fr auto;padding:28px 28px 20px;z-index:3}.desktop-icons{align-self:start;display:grid;grid-template-columns:repeat(auto-fill,88px);grid-auto-rows:108px;gap:18px 20px;max-width:560px;align-content:start}.desktop-app{border:0;background:transparent;color:#fff;display:grid;place-items:center;gap:7px;min-width:86px;padding:8px 6px;border-radius:18px;text-shadow:0 2px 12px rgba(0,0,0,.4);transition:background .2s,transform .24s cubic-bezier(.16,1,.3,1)}.desktop-app:hover{background:rgba(255,255,255,.11);transform:translateY(-3px)}.desktop-app:active{transform:scale(.95)}.os-icon{width:66px;height:66px;border-radius:18px;display:grid;place-items:center;font-size:1.65rem;font-weight:900;box-shadow:0 12px 32px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.34);border:1px solid rgba(255,255,255,.2);position:relative;overflow:hidden}.os-icon::after{content:"";position:absolute;inset:0;background:linear-gradient(145deg,rgba(255,255,255,.35),transparent 42%,rgba(0,0,0,.12));pointer-events:none}.desktop-title{font-size:.76rem;line-height:1.15;max-width:86px;text-align:center;font-weight:600;word-break:break-word}.desktop-note{position:absolute;right:28px;top:66px;width:min(330px,34vw);padding:18px;border-radius:24px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(20px);box-shadow:0 24px 60px rgba(0,0,0,.18);color:#fff}.desktop-note .eyebrow{font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;opacity:.58;font-weight:800}.desktop-note h3{font-size:1.2rem;margin:4px 0 6px;letter-spacing:-.03em}.desktop-note p{font-size:.84rem;opacity:.72}.desktop-note .note-actions{display:flex;gap:8px;margin-top:14px}.note-actions button{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.12);color:#fff;border-radius:999px;padding:7px 11px;font-size:.78rem;font-weight:700}.note-actions button:hover{background:rgba(255,255,255,.2)}.os-dock-wrap{display:flex;justify-content:center;align-items:end;pointer-events:none}.os-dock{pointer-events:auto;display:flex;align-items:end;gap:9px;padding:10px 14px;border-radius:28px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(24px) saturate(1.35);-webkit-backdrop-filter:blur(24px) saturate(1.35);box-shadow:0 24px 70px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.22)}.dock-app{width:54px;height:54px;border:0;background:transparent;border-radius:16px;display:grid;place-items:center;position:relative;transition:transform .22s cubic-bezier(.16,1,.3,1);transform-origin:bottom center}.dock-app:hover{transform:translateY(-10px) scale(1.22)}.dock-app .os-icon{width:52px;height:52px;border-radius:15px;font-size:1.36rem}.dock-app.open::after{content:"";position:absolute;bottom:-7px;left:50%;width:5px;height:5px;transform:translateX(-50%);border-radius:50%;background:#fff;box-shadow:0 0 8px rgba(255,255,255,.75)}.os-close-all{position:absolute;right:14px;bottom:18px;z-index:9;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.18);color:rgba(255,255,255,.78);border-radius:999px;padding:9px 12px;backdrop-filter:blur(12px);font-size:.78rem}.os-close-all:hover{color:#fff;background:rgba(255,255,255,.13)}
+.window-layer{position:absolute;inset:34px 0 0;z-index:12;pointer-events:none}.os-window{position:absolute;width:min(720px,calc(100vw - 48px));height:min(480px,calc(100vh - 150px));left:50%;top:48%;transform:translate(-50%,-50%);background:rgba(248,250,252,.78);color:#101828;border:1px solid rgba(255,255,255,.4);border-radius:18px;box-shadow:0 32px 100px rgba(0,0,0,.35);backdrop-filter:blur(30px) saturate(1.25);-webkit-backdrop-filter:blur(30px) saturate(1.25);overflow:hidden;pointer-events:auto;animation:windowPop .28s cubic-bezier(.16,1,.3,1) both}.os-window.compact{width:min(520px,calc(100vw - 40px));height:auto;min-height:320px}.os-window.full{width:calc(100vw - 46px);height:calc(100vh - 112px);left:23px!important;top:44px!important;transform:none!important}.os-window.active-window{box-shadow:0 36px 110px rgba(0,0,0,.42)}@keyframes windowPop{from{opacity:0;transform:translate(-50%,-46%) scale(.96)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}.window-bar{height:42px;display:flex;align-items:center;gap:12px;padding:0 14px;background:rgba(255,255,255,.56);border-bottom:1px solid rgba(0,0,0,.08);cursor:grab;user-select:none}.window-controls{display:flex;gap:7px;flex-shrink:0}.window-dot{width:12px;height:12px;border-radius:50%;border:0;display:block}.window-title{font-size:.84rem;font-weight:760;color:#334155}.window-body{padding:20px;height:calc(100% - 42px);overflow:auto}.window-body h2{font-size:1.55rem;letter-spacing:-.04em;margin-bottom:8px}.window-body p{color:#475569;font-size:.92rem}.window-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}.window-card{display:block;text-decoration:none;color:inherit;background:rgba(255,255,255,.66);border:1px solid rgba(15,23,42,.08);border-radius:16px;padding:14px;transition:.22s}.window-card:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(15,23,42,.12)}.window-card strong{display:block;font-size:.94rem}.window-card span{display:block;margin-top:4px;font-size:.78rem;color:#64748b}.terminal-window{background:rgba(3,7,18,.86);color:#d1fae5}.terminal-window .window-bar{background:rgba(15,23,42,.78);border-bottom-color:rgba(255,255,255,.09)}.terminal-window .window-title{color:#d1fae5}.terminal-window .window-body{font-family:"SF Mono","JetBrains Mono",Consolas,monospace;font-size:.84rem}.terminal-line{margin-bottom:9px;white-space:pre-wrap}.prompt{color:#34d399}.terminal-cursor{display:inline-block;width:7px;height:14px;background:#d1fae5;margin-left:3px;vertical-align:-2px;animation:blink 1s steps(2) infinite}@keyframes blink{50%{opacity:0}}
+@media(max-width:760px){.featured-inner{grid-template-columns:1fr;padding:24px}.featured-inner .action-btn{width:max-content}.header{padding-top:54px}.app-card{grid-template-columns:46px 1fr auto;padding:16px}.app-card .aicon{width:46px;height:46px}.os-menu{height:38px;padding:0 10px}.menu-item:not(.keep-mobile),.traffic-mini{display:none}.os-clock{font-size:.76rem}.os-desktop{inset:38px 0 0;padding:18px 14px 14px;grid-template-rows:1fr auto}.desktop-icons{max-width:none;grid-template-columns:repeat(4,1fr);grid-auto-rows:96px;gap:10px 4px}.desktop-app{min-width:0}.os-icon{width:58px;height:58px;border-radius:16px}.desktop-title{font-size:.7rem;max-width:72px}.desktop-note{display:none}.os-dock{max-width:calc(100vw - 24px);overflow-x:auto;padding:8px 10px;border-radius:24px}.dock-app{width:48px;height:48px;flex:0 0 auto}.dock-app .os-icon{width:46px;height:46px}.dock-app:hover{transform:none}.os-close-all{display:none}.window-layer{inset:38px 0 0}.os-window,.os-window.compact{width:calc(100vw - 20px);height:calc(100vh - 118px);left:10px!important;top:10px!important;transform:none!important;border-radius:17px}.window-body{padding:16px}.window-grid{grid-template-columns:1fr}.boot-mark{width:68px;height:68px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
-<div class="orb orb-3"></div>
-
-<header class="header">
-  <h1>Lance <span class="accent">App Hub</span></h1>
-  <p class="sub">生活、学习与 AI 信息流的个人应用市场</p>
-</header>
-
-<div class="wrap">
-  <!-- Filter -->
-  <div class="filter-bar" id="filterBar">
-    <button class="filter-pill active" data-cat="all">全部</button>
-    <button class="filter-pill" data-cat="life">生活与文化</button>
-    <button class="filter-pill" data-cat="learn">学习成长</button>
-    <button class="filter-pill" data-cat="ai">AI 信息流</button>
-  </div>
-
-  <!-- Featured -->
-  <a href="https://builders.skj1023.top/" target="_blank" rel="noopener" class="featured" id="featured">
-    <div class="featured-inner">
-      <div>
-        <div class="label">今日推荐</div>
-        <h2>AI Builders Daily</h2>
-        <p>每日筛选一线 AI Builders 的观点、文章和播客，过滤噪音，提炼高信号内容。</p>
-      </div>
-      <span class="action-btn">打开应用 →</span>
-    </div>
-  </a>
-
-  <!-- App sections rendered by JS -->
-  <div id="appSections"></div>
-</div>
-
-<footer class="footer">
-  <p>Lance App Hub · Personal apps for life, learning and AI signals · Hosted on GitHub Pages</p>
-</footer>
-
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+<main id="hubPage" aria-label="Lance App Hub"><header class="header"><h1>Lance <span class="accent">App Hub</span></h1><p class="sub">生活、学习与 AI 信息流的个人应用市场</p><div class="hero-actions"><button class="os-power-btn" id="startOS" type="button" aria-label="启动 Lance OS 桌面模式"><span class="power-glyph">⏻</span>启动 Lance OS</button></div></header><div class="wrap"><div class="filter-bar" id="filterBar" aria-label="应用分类筛选"><button class="filter-pill active" data-cat="all">全部</button><button class="filter-pill" data-cat="life">生活与文化</button><button class="filter-pill" data-cat="learn">学习成长</button><button class="filter-pill" data-cat="ai">AI 信息流</button></div><a href="https://builders.skj1023.top/" target="_blank" rel="noopener" class="featured" id="featured"><div class="featured-inner"><div><div class="label">今日推荐</div><h2>AI Builders Daily</h2><p>每日筛选一线 AI Builders 的观点、文章和播客，过滤噪音，提炼高信号内容。</p></div><span class="action-btn">打开应用 →</span></div></a><div id="appSections"></div></div></main>
+<footer class="footer" id="hubFooter"><p>Lance App Hub · Personal apps for life, learning and AI signals · Hosted on GitHub Pages</p></footer>
+<section class="boot-screen" id="bootScreen" aria-live="polite" aria-hidden="true"><div class="boot-card"><div class="boot-mark">L</div><h2>Lance OS</h2><p id="bootText">Booting personal desktop...</p><div class="boot-bar"><span></span></div></div></section>
+<section class="lance-os" id="lanceOS" aria-label="Lance OS 桌面" aria-hidden="true"><div class="os-wallpaper"></div><div class="os-menu"><div class="os-menu-left"><span class="apple-mark">⌘</span><strong>Lance OS</strong><button class="menu-item btn-like keep-mobile" data-open="about">About</button><button class="menu-item btn-like" data-open="finder">Finder</button><button class="menu-item btn-like" data-open="terminal">Terminal</button><button class="menu-item btn-like" id="returnHub">Return Hub</button></div><div class="os-menu-right"><div class="traffic-mini"><span class="red"></span><span class="yellow"></span><span class="green"></span></div><span class="menu-item">Wi‑Fi</span><span class="os-clock" id="osClock">--:--</span></div></div><div class="os-desktop"><div class="desktop-icons" id="desktopIcons"></div><aside class="desktop-note" aria-label="Lance OS 提示"><div class="eyebrow">Personal Desktop</div><h3>欢迎来到 Lance OS</h3><p>这里把项目、资料和 AI 信息流整理成一个桌面。单击图标即可打开应用或窗口。</p><div class="note-actions"><button data-open="finder">打开 Finder</button><button data-open="about">关于 Lance</button></div></aside><div class="os-dock-wrap"><div class="os-dock" id="osDock" aria-label="Lance OS Dock"></div></div></div><div class="window-layer" id="windowLayer"></div><button class="os-close-all" id="exitOS" type="button">退出桌面模式 Esc</button></section>
 <script>
-const apps = [
-  {
-    id:'fifa', cat:'life', catLabel:'生活与文化',
-    title:'2026 FIFA World Cup',
-    desc:'美加墨世界杯观赛主页',
-    url:'https://fifa.skj1023.top',
-    icon:'🏆', iconBg:'linear-gradient(135deg,#1a1a2e,#16213e)', iconClr:'#ffd700',
-    tags:['体育','2026'], tagType:'life',
-    badge:'在线', featured:false
-  },
-  {
-    id:'espana', cat:'life', catLabel:'生活与文化',
-    title:'España',
-    desc:'西班牙语学习与西班牙文化',
-    url:'https://espana.skj1023.top',
-    icon:'🇪🇸', iconBg:'linear-gradient(135deg,#aa151b,#f1bf00)', iconClr:'#fff',
-    tags:['西语','文化'], tagType:'life',
-    badge:'在线', featured:false
-  },
-  {
-    id:'english', cat:'learn', catLabel:'学习成长',
-    title:'English Learning',
-    desc:'英语学习工具与资源',
-    url:'https://english.skj1023.top',
-    icon:'EN', iconBg:'linear-gradient(135deg,#1e3a5f,#2b5c8a)', iconClr:'#fff',
-    tags:['English','语言'], tagType:'learning',
-    badge:'在线', featured:false
-  },
-  {
-    id:'us-visa', cat:'life', catLabel:'生活与文化',
-    title:'美国签证材料清单',
-    desc:'按准备顺序整理的脱敏版美签材料 checklist',
-    url:'https://main.skj1023.top/us-visa/',
-    icon:'US', iconBg:'#f5f4ed', iconClr:'#1B365D',
-    tags:['签证','出行'], tagType:'life',
-    badge:'资料', featured:false
-  },
-  {
-    id:'builders', cat:'ai', catLabel:'AI 信息流',
-    title:'AI Builders Daily',
-    desc:'每日 AI Builders 高信号内容简报',
-    url:'https://builders.skj1023.top/',
-    icon:'紙', iconBg:'#f5f4ed', iconClr:'#1B365D',
-    tags:['每日更新'], tagType:'ai',
-    badge:'新', featured:true
-  }
-];
-
-const sections = [
-  {id:'life', label:'生活与文化', icon:'🎯', color:'#ff9f0a'},
-  {id:'learn', label:'学习成长', icon:'📖', color:'#34c759'},
-  {id:'ai', label:'AI 信息流', icon:'🧠', color:'#af52de'}
-];
-
-let activeCat = 'all';
-
-function render() {
-  const container = document.getElementById('appSections');
-  let html = '';
-  
-  sections.forEach(s => {
-    const items = apps.filter(a => a.cat === s.id && activeCat === 'all' || activeCat === a.cat);
-    if (activeCat !== 'all' && activeCat !== s.id && activeCat !== 'all') return;
-    if (items.length === 0) return;
-    
-    html += `<div class="section" style="animation-delay:.2s">`;
-    html += `<div class="sec-header"><div class="sec-icon" style="background:${s.color}22;color:${s.color}">${s.icon}</div><h3>${s.label}</h3></div>`;
-    html += `<div class="app-grid">`;
-    
-    items.forEach((a, i) => {
-      const isComing = a.id === 'coming';
-      const delay = 0.2 + i * 0.06;
-      html += `<a href="${isComing ? '#' : a.url}" target="${isComing ? '' : '_blank'}" rel="${isComing ? '' : 'noopener'}" class="app-card ${isComing ? 'coming' : ''}" style="animation-delay:${delay}s" data-id="${a.id}" data-cat="${a.cat}">`;
-      html += `<div class="aicon" style="background:${a.iconBg};color:${a.iconClr}">${a.icon}</div>`;
-      html += `<div class="info"><h4>${a.title}</h4><p>${a.desc}</p><div class="tags">`;
-      (a.tags||[]).forEach(t => { html += `<span class="${a.tagType||''}">${t}</span>`; });
-      if (a.badge) { html += `<span class="${a.tagType||''}">${a.badge}</span>`; }
-      html += `</div></div><span class="aarrow">${isComing ? '' : '→'}</span>`;
-      html += `</a>`;
-    });
-    
-    html += `</div></div>`;
-  });
-  
-  // Coming Soon
-  html += `<div class="section" style="animation-delay:.3s"><div class="sec-header"><div class="sec-icon" style="background:rgba(142,142,147,.15);color:#8e8e93">⋯</div><h3 style="color:var(--text-dim)">即将上线</h3></div><div class="app-grid"><a class="app-card coming"><div class="aicon">＋</div><div class="info"><h4>更多应用</h4><p>新的个人应用正在规划或开发中</p></div></a></div></div>`;
-  
-  container.innerHTML = html;
-}
-
-// Filter
-document.querySelectorAll('.filter-pill').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeCat = btn.dataset.cat;
-    render();
-    // reset scroll position smoothly
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
-});
-
-render();
+const apps=[{id:'fifa',cat:'life',catLabel:'生活与文化',title:'2026 FIFA World Cup',desc:'美加墨世界杯观赛主页',url:'https://fifa.skj1023.top',icon:'🏆',iconBg:'linear-gradient(135deg,#1a1a2e,#16213e)',iconClr:'#ffd700',tags:['体育','2026'],tagType:'life',badge:'在线',featured:false,desktop:true,type:'link'},{id:'espana',cat:'life',catLabel:'生活与文化',title:'España',desc:'西班牙语学习与西班牙文化',url:'https://espana.skj1023.top',icon:'🇪🇸',iconBg:'linear-gradient(135deg,#aa151b,#f1bf00)',iconClr:'#fff',tags:['西语','文化'],tagType:'life',badge:'在线',featured:false,desktop:true,type:'link'},{id:'english',cat:'learn',catLabel:'学习成长',title:'English Learning',desc:'英语学习工具与资源',url:'https://english.skj1023.top',icon:'EN',iconBg:'linear-gradient(135deg,#1e3a5f,#2b5c8a)',iconClr:'#fff',tags:['English','语言'],tagType:'learning',badge:'在线',featured:false,desktop:true,type:'link'},{id:'us-visa',cat:'life',catLabel:'生活与文化',title:'美国签证材料清单',desc:'按准备顺序整理的脱敏版美签材料 checklist',url:'https://main.skj1023.top/us-visa/',icon:'US',iconBg:'#f5f4ed',iconClr:'#1B365D',tags:['签证','出行'],tagType:'life',badge:'资料',featured:false,desktop:true,type:'link'},{id:'builders',cat:'ai',catLabel:'AI 信息流',title:'AI Builders Daily',desc:'每日 AI Builders 高信号内容简报',url:'https://builders.skj1023.top/',icon:'紙',iconBg:'#f5f4ed',iconClr:'#1B365D',tags:['每日更新'],tagType:'ai',badge:'新',featured:true,desktop:true,type:'link'},{id:'about',cat:'system',catLabel:'系统',title:'About Lance',desc:'个人简介与网站说明',icon:'L',iconBg:'linear-gradient(135deg,#5b7cfa,#8b5cf6)',iconClr:'#fff',tags:['系统'],tagType:'ai',desktop:true,type:'window'},{id:'finder',cat:'system',catLabel:'系统',title:'Projects Finder',desc:'按项目类别浏览应用',icon:'📁',iconBg:'linear-gradient(135deg,#60a5fa,#2563eb)',iconClr:'#fff',tags:['项目'],tagType:'learning',desktop:true,type:'window'},{id:'terminal',cat:'system',catLabel:'系统',title:'Terminal',desc:'Lance OS 趣味终端',icon:'⌁',iconBg:'linear-gradient(135deg,#111827,#020617)',iconClr:'#34d399',tags:['命令行'],tagType:'ai',desktop:true,type:'window'},{id:'settings',cat:'system',catLabel:'系统',title:'Settings',desc:'桌面模式说明',icon:'⚙️',iconBg:'linear-gradient(135deg,#64748b,#0f172a)',iconClr:'#fff',tags:['桌面'],tagType:'learning',desktop:true,type:'window'}];
+const sections=[{id:'life',label:'生活与文化',icon:'🎯',color:'#ff9f0a'},{id:'learn',label:'学习成长',icon:'📖',color:'#34c759'},{id:'ai',label:'AI 信息流',icon:'🧠',color:'#af52de'}];let activeCat='all';let zCounter=30;const openWindows=new Map();
+function renderHub(){const container=document.getElementById('appSections');let html='';sections.forEach(s=>{const items=apps.filter(a=>a.cat===s.id&&(activeCat==='all'||activeCat===a.cat));if(activeCat!=='all'&&activeCat!==s.id)return;if(items.length===0)return;html+=`<div class="section" style="animation-delay:.2s"><div class="sec-header"><div class="sec-icon" style="background:${s.color}22;color:${s.color}">${s.icon}</div><h3>${s.label}</h3></div><div class="app-grid">`;items.forEach((a,i)=>{const delay=0.2+i*0.06;html+=`<a href="${a.url}" target="_blank" rel="noopener" class="app-card" style="animation-delay:${delay}s" data-id="${a.id}" data-cat="${a.cat}"><div class="aicon" style="background:${a.iconBg};color:${a.iconClr}">${a.icon}</div><div class="info"><h4>${a.title}</h4><p>${a.desc}</p><div class="tags">`; (a.tags||[]).forEach(t=>{html+=`<span class="${a.tagType||''}">${t}</span>`}); if(a.badge)html+=`<span class="${a.tagType||''}">${a.badge}</span>`;html+=`</div></div><span class="aarrow">→</span></a>`});html+=`</div></div>`});html+=`<div class="section" style="animation-delay:.3s"><div class="sec-header"><div class="sec-icon" style="background:rgba(142,142,147,.15);color:#8e8e93">⋯</div><h3 style="color:var(--text-dim)">即将上线</h3></div><div class="app-grid"><a class="app-card coming"><div class="aicon">＋</div><div class="info"><h4>更多应用</h4><p>新的个人应用正在规划或开发中</p></div></a></div></div>`;container.innerHTML=html}
+function iconHTML(app){return`<span class="os-icon" style="background:${app.iconBg};color:${app.iconClr}">${app.icon}</span>`}function renderDesktop(){const desktop=document.getElementById('desktopIcons');const dock=document.getElementById('osDock');const desktopApps=apps.filter(a=>a.desktop);desktop.innerHTML=desktopApps.map(app=>`<button class="desktop-app" data-app="${app.id}" title="${app.desc}">${iconHTML(app)}<span class="desktop-title">${app.title}</span></button>`).join('');dock.innerHTML=desktopApps.slice(0,8).map(app=>`<button class="dock-app" data-app="${app.id}" aria-label="${app.title}">${iconHTML(app)}</button>`).join('');document.querySelectorAll('[data-app]').forEach(btn=>btn.addEventListener('click',()=>launchApp(btn.dataset.app)))}
+function startOS(){const boot=document.getElementById('bootScreen');const os=document.getElementById('lanceOS');document.body.classList.add('os-active');boot.classList.add('active');boot.setAttribute('aria-hidden','false');const messages=['Booting personal desktop...','Mounting projects...','Loading AI signals...','Welcome, Lance.'];let idx=0;const text=document.getElementById('bootText');const msgTimer=setInterval(()=>{idx=Math.min(idx+1,messages.length-1);text.textContent=messages[idx]},520);setTimeout(()=>{clearInterval(msgTimer);boot.classList.remove('active');boot.setAttribute('aria-hidden','true');os.classList.add('active');os.setAttribute('aria-hidden','false');renderDesktop();updateClock()},2050)}function exitOS(){document.getElementById('lanceOS').classList.remove('active');document.getElementById('lanceOS').setAttribute('aria-hidden','true');document.body.classList.remove('os-active')}
+function launchApp(id){const app=apps.find(a=>a.id===id);if(!app)return;if(app.type==='link'){window.open(app.url,'_blank','noopener');return}openWindow(app)}
+function openWindow(app){if(openWindows.has(app.id)){focusWindow(openWindows.get(app.id));return}const layer=document.getElementById('windowLayer');const win=document.createElement('article');win.className=`os-window ${app.id==='terminal'?'terminal-window':''} ${app.id==='about'||app.id==='settings'?'compact':''}`;win.dataset.window=app.id;win.style.zIndex=String(++zCounter);const left=46+openWindows.size*22;const top=54+openWindows.size*18;if(window.innerWidth>760){win.style.left=`${left}%`;win.style.top=`${top}%`}win.innerHTML=`<div class="window-bar"><div class="window-controls"><button class="window-dot red" data-close="${app.id}" aria-label="关闭"></button><button class="window-dot yellow" data-minimize="${app.id}" aria-label="最小化"></button><button class="window-dot green" data-maximize="${app.id}" aria-label="最大化"></button></div><div class="window-title">${app.title}</div></div><div class="window-body">${windowContent(app)}</div>`;layer.appendChild(win);openWindows.set(app.id,win);markDock(app.id,true);focusWindow(win);makeDraggable(win);win.addEventListener('mousedown',()=>focusWindow(win));win.querySelector('[data-close]').addEventListener('click',()=>closeWindow(app.id));win.querySelector('[data-minimize]').addEventListener('click',()=>minimizeWindow(app.id));win.querySelector('[data-maximize]').addEventListener('click',()=>win.classList.toggle('full'))}
+function windowContent(app){if(app.id==='about'){return`<h2>About Lance OS</h2><p>Lance OS 是 main.skj1023.top 的隐藏桌面模式：把个人项目、资料页面和 AI 信息流整理成一个像 macOS 一样的数字工作台。</p><div class="window-grid"><a class="window-card" href="https://main.skj1023.top" target="_blank"><strong>App Hub</strong><span>返回正式应用主页</span></a><a class="window-card" href="https://builders.skj1023.top/" target="_blank"><strong>AI Builders Daily</strong><span>每日 AI 高信号内容</span></a></div>`}if(app.id==='finder'){const visible=apps.filter(a=>['life','learn','ai'].includes(a.cat));return`<h2>Projects Finder</h2><p>这里是 Lance 的应用目录。你可以从桌面图标、Dock 或这个 Finder 窗口打开它们。</p><div class="window-grid">${visible.map(a=>`<a class="window-card" href="${a.url}" target="_blank" rel="noopener"><strong>${a.title}</strong><span>${a.desc}</span></a>`).join('')}</div>`}if(app.id==='terminal'){return`<div class="terminal-line"><span class="prompt">lance@main</span> ~ % boot lance-os</div><div class="terminal-line">Personal desktop loaded.</div><div class="terminal-line"><span class="prompt">lance@main</span> ~ % ls apps</div><div class="terminal-line">fifa-2026   ai-builders   us-visa   english-learning   espana</div><div class="terminal-line"><span class="prompt">lance@main</span> ~ % open curiosity</div><div class="terminal-line">Opening small, useful, slightly over-engineered things.<span class="terminal-cursor"></span></div>`}if(app.id==='settings'){return`<h2>Desktop Settings</h2><p>这是一个无依赖的单文件 HTML 桌面模式：支持开机动画、顶部菜单栏、桌面图标、Dock、窗口打开/关闭/拖拽和移动端主屏幕布局。</p><div class="window-grid"><div class="window-card"><strong>Design</strong><span>macOS Sonoma / Liquid Glass / Personal Lab</span></div><div class="window-card"><strong>Shortcut</strong><span>按 Esc 可退出桌面模式</span></div></div>`}return`<h2>${app.title}</h2><p>${app.desc}</p>`}
+function focusWindow(win){document.querySelectorAll('.os-window').forEach(w=>w.classList.remove('active-window'));win.classList.add('active-window');win.style.zIndex=String(++zCounter)}function closeWindow(id){const win=openWindows.get(id);if(!win)return;win.remove();openWindows.delete(id);markDock(id,false)}function minimizeWindow(id){const win=openWindows.get(id);if(!win)return;win.style.display=win.style.display==='none'?'':'none'}function markDock(id,open){document.querySelectorAll(`.dock-app[data-app="${id}"]`).forEach(btn=>btn.classList.toggle('open',open))}
+function makeDraggable(win){const bar=win.querySelector('.window-bar');let dragging=false,startX=0,startY=0,startLeft=0,startTop=0;bar.addEventListener('pointerdown',e=>{if(window.innerWidth<=760||win.classList.contains('full'))return;dragging=true;bar.setPointerCapture(e.pointerId);bar.style.cursor='grabbing';const rect=win.getBoundingClientRect();win.style.transform='none';win.style.left=`${rect.left}px`;win.style.top=`${rect.top}px`;startX=e.clientX;startY=e.clientY;startLeft=rect.left;startTop=rect.top});bar.addEventListener('pointermove',e=>{if(!dragging)return;const nextLeft=Math.max(8,Math.min(window.innerWidth-win.offsetWidth-8,startLeft+e.clientX-startX));const nextTop=Math.max(42,Math.min(window.innerHeight-win.offsetHeight-14,startTop+e.clientY-startY));win.style.left=`${nextLeft}px`;win.style.top=`${nextTop}px`});bar.addEventListener('pointerup',()=>{dragging=false;bar.style.cursor='grab'})}
+function updateClock(){const clock=document.getElementById('osClock');if(!clock)return;const now=new Date();clock.textContent=now.toLocaleString('zh-CN',{weekday:'short',hour:'2-digit',minute:'2-digit'})}setInterval(updateClock,30000);
+document.querySelectorAll('.filter-pill').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.filter-pill').forEach(b=>b.classList.remove('active'));btn.classList.add('active');activeCat=btn.dataset.cat;renderHub();window.scrollTo({top:0,behavior:'smooth'})})});document.getElementById('startOS').addEventListener('click',startOS);document.getElementById('exitOS').addEventListener('click',exitOS);document.getElementById('returnHub').addEventListener('click',exitOS);document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('lanceOS').classList.contains('active'))exitOS()});document.querySelectorAll('[data-open]').forEach(btn=>btn.addEventListener('click',()=>launchApp(btn.dataset.open)));renderHub();
 </script>
 </body>
 </html>
