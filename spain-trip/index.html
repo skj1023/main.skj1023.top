@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>西班牙行程规划 · 2026.10</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23aa151b'/%3E%3Ctext x='50' y='67' text-anchor='middle' font-size='42' fill='%23f1bf00'%3E🇪🇸%3C/text%3E%3C/svg%3E">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+::selection{background:rgba(170,21,27,.2)}
+:root{--bg:#0a0a12;--bg-card:#14141e;--text:#f0f0f4;--text-sec:#8888a0;--text-dim:#55556a;--border:#22223a;--accent:#aa151b;--accent2:#f1bf00;--blue:#0071e3;--green:#34c759;--purple:#af52de;--orange:#ff9f0a;--radius:20px;--radius-sm:12px;--shadow:0 8px 32px rgba(0,0,0,.3);--shadow-hover:0 28px 64px rgba(170,21,27,.18)}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","PingFang SC","Noto Sans SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+
+/* Orb background */
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;animation:orbFloat 14s ease-in-out infinite alternate}
+.orb-1{width:300px;height:300px;background:rgba(170,21,27,.18);top:-60px;left:-50px}
+.orb-2{width:220px;height:220px;background:rgba(241,191,0,.12);bottom:-30px;right:-20px;animation-delay:-4s;animation-duration:16s}
+.orb-3{width:180px;height:180px;background:rgba(0,113,227,.1);top:50%;left:55%;animation-delay:-8s;animation-duration:18s}
+@keyframes orbFloat{0%{transform:translate(0,0)scale(1)}100%{transform:translate(25px,-25px)scale(1.12)}}
+
+/* Header */
+.header{text-align:center;padding:60px 20px 32px;position:relative;z-index:1;animation:fadeDown .8s ease both}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.header .flag{font-size:3.2rem;margin-bottom:8px}
+.header h1{font-size:clamp(1.8rem,4.5vw,3rem);font-weight:800;letter-spacing:-.03em;margin-bottom:6px}
+.header h1 .accent{background:linear-gradient(135deg,#aa151b,#f1bf00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header .sub{font-size:1rem;color:var(--text-sec);margin-top:4px}
+.header .meta{display:flex;justify-content:center;gap:16px;margin-top:16px;flex-wrap:wrap;animation:fadeDown .8s ease .15s both}
+.header .meta span{font-size:.85rem;color:var(--text-sec);display:flex;align-items:center;gap:5px;padding:6px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:999px}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:100;background:rgba(10,10,18,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:10px 0;margin-bottom:28px}
+.nav-inner{max-width:820px;margin:0 auto;padding:0 20px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav a{font-size:.82rem;color:var(--text-sec);text-decoration:none;padding:6px 14px;border-radius:999px;white-space:nowrap;transition:all .25s;border:1px solid transparent}
+.nav a:hover,.nav a.active{color:var(--text);background:rgba(170,21,27,.12);border-color:rgba(170,21,27,.25)}
+
+/* Section */
+.section{margin-bottom:36px;animation:fadeUp .6s ease both;position:relative;z-index:1}
+.section-title{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.section-title .icon{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.section-title h2{font-size:1.15rem;font-weight:700;letter-spacing:-.01em}
+
+/* Route map */
+.route-visual{display:flex;align-items:center;gap:0;flex-wrap:wrap;justify-content:center;padding:20px 0;margin-bottom:20px}
+.route-city{text-align:center;position:relative}
+.route-city .dot{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin:0 auto 6px;border:2px solid var(--border);background:var(--bg-card);transition:all .3s}
+.route-city:hover .dot{border-color:var(--accent);transform:scale(1.15);box-shadow:0 0 20px rgba(170,21,27,.3)}
+.route-city .name{font-size:.78rem;font-weight:600;color:var(--text-sec)}
+.route-city .days{font-size:.68rem;color:var(--text-dim);margin-top:2px}
+.route-arrow{color:var(--text-dim);font-size:.9rem;margin:0 4px;flex-shrink:0}
+
+/* Day cards */
+.day-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:12px;transition:all .3s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+.day-card:hover{border-color:rgba(170,21,27,.3);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.day-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:4px 0 0 4px}
+.day-card.d1::before{background:#aa151b}.day-card.d2::before{background:#c44133}.day-card.d3::before{background:#d46b4a}.day-card.d4::before{background:#e09560}.day-card.d5::before{background:#f1bf00}.day-card.d6::before{background:#34c759}.day-card.d7::before{background:#0071e3}.day-card.d8::before{background:#af52de}.day-card.d9::before{background:#ff2d55}
+.day-header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.day-num{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:rgba(170,21,27,.12);color:#f1bf00}
+.day-date{font-size:.82rem;color:var(--text-dim)}
+.day-city{font-size:.82rem;color:var(--text-sec);margin-left:auto;display:flex;align-items:center;gap:4px}
+.day-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;letter-spacing:-.01em}
+.day-card .schedule{display:grid;gap:6px}
+.day-card .schedule-item{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:var(--text-sec)}
+.day-card .schedule-item .time{font-weight:600;color:var(--text);min-width:52px;flex-shrink:0;font-size:.82rem}
+.day-card .schedule-item .desc{flex:1}
+.day-card .schedule-item .tag{font-size:.68rem;padding:2px 8px;border-radius:999px;font-weight:600;margin-left:6px;white-space:nowrap}
+.tag-agent{background:rgba(0,113,227,.12);color:#60a5fa}
+.tag-self{background:rgba(255,159,10,.12);color:#ffb340}
+.tag-free{background:rgba(52,199,89,.12);color:#34d399}
+.tag-food{background:rgba(175,82,222,.12);color:#c77dff}
+.tag-hotel{background:rgba(170,21,27,.12);color:#ff6b6b}
+
+/* Responsibility table */
+.resp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.resp-grid{grid-template-columns:1fr}}
+.resp-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:all .3s}
+.resp-card:hover{border-color:rgba(170,21,27,.25);transform:translateY(-2px)}
+.resp-card h3{font-size:1rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.resp-card ul{list-style:none;display:grid;gap:8px}
+.resp-card li{font-size:.88rem;color:var(--text-sec);display:flex;align-items:flex-start;gap:8px}
+.resp-card li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+.resp-card.agent h3 .badge{background:rgba(0,113,227,.12);color:#60a5fa;padding:2px 8px;border-radius:999px;font-size:.72rem}
+.resp-card.self h3 .badge{background:rgba(255,159,10,.12);color:#ffb340;padding:2px 8px;border-radius:999px;font-size:.72rem}
+
+/* Tips */
+.tip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.tip-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center;transition:all .3s}
+.tip-card:hover{border-color:rgba(170,21,27,.2);transform:translateY(-2px)}
+.tip-card .tip-icon{font-size:1.8rem;margin-bottom:8px}
+.tip-card h4{font-size:.88rem;font-weight:650;margin-bottom:4px}
+.tip-card p{font-size:.78rem;color:var(--text-sec);line-height:1.5}
+
+/* Budget */
+.budget-table{width:100%;border-collapse:collapse;font-size:.88rem}
+.budget-table th{text-align:left;padding:10px 12px;font-weight:650;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--border)}
+.budget-table td{padding:10px 12px;border-bottom:1px solid rgba(34,34,58,.5)}
+.budget-table tr:last-child td{border-bottom:none}
+.budget-table .who{font-size:.72rem;padding:2px 8px;border-radius:999px;font-weight:600}
+.budget-table .who.agent{background:rgba(0,113,227,.12);color:#60a5fa}
+.budget-table .who.self{background:rgba(255,159,10,.12);color:#ffb340}
+.budget-table .amount{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+
+/* Footer */
+.footer{text-align:center;padding:40px 20px;color:var(--text-dim);font-size:.78rem;border-top:1px solid var(--border);margin-top:20px;position:relative;z-index:1}
+.footer a{color:var(--text-sec);text-decoration:none}
+.footer a:hover{color:var(--accent)}
+
+/* Back link */
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--text-sec);text-decoration:none;font-size:.85rem;padding:6px 14px;border-radius:999px;border:1px solid var(--border);transition:all .25s;margin-bottom:20px}
+.back-link:hover{color:var(--text);border-color:rgba(170,21,27,.3);background:rgba(170,21,27,.08)}
+
+/* Animations */
+.day-card:nth-child(1){animation-delay:.05s}.day-card:nth-child(2){animation-delay:.1s}.day-card:nth-child(3){animation-delay:.15s}.day-card:nth-child(4){animation-delay:.2s}.day-card:nth-child(5){animation-delay:.25s}.day-card:nth-child(6){animation-delay:.3s}.day-card:nth-child(7){animation-delay:.35s}.day-card:nth-child(8){animation-delay:.4s}.day-card:nth-child(9){animation-delay:.45s}
+
+@media(max-width:600px){.header{padding:40px 16px 24px}.wrap{padding:0 16px}.day-card{padding:16px 18px}.route-city .dot{width:34px;height:34px;font-size:1rem}.route-city .name{font-size:.72rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+</style>
+</head>
+<body>
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+
+<div class="wrap">
+<a href="https://main.skj1023.top" class="back-link">← 返回 Lance App Hub</a>
+
+<header class="header">
+<div class="flag">🇪🇸</div>
+<h1>西班牙<span class="accent">行程规划</span></h1>
+<p class="sub">9天8晚 · 马德里 → 安达卢西亚 → 巴塞罗那</p>
+<div class="meta">
+<span>📅 2026.10.1 — 10.9</span>
+<span>🏙️ 7座城市</span>
+<span>👥 地接 + 自由行</span>
+</div>
+</header>
+
+<nav class="nav">
+<div class="nav-inner">
+<a href="#route" class="active">路线总览</a>
+<a href="#itinerary">每日行程</a>
+<a href="#responsibility">分工明细</a>
+<a href="#budget">预算参考</a>
+<a href="#tips">出行贴士</a>
+</div>
+</nav>
+
+<!-- Route Overview -->
+<section class="section" id="route">
+<div class="section-title">
+<div class="icon" style="background:rgba(170,21,27,.12);color:#ff6b6b">🗺️</div>
+<h2>路线总览</h2>
+</div>
+<div class="route-visual">
+<div class="route-city"><div class="dot">✈️</div><div class="name">马德里</div><div class="days">Day 1-2</div></div>
+<span class="route-arrow">→</span>
+<div class="route-city"><div class="dot">🏛️</div><div class="name">托莱多</div><div class="days">Day 2</div></div>
+<span class="route-arrow">→</span>
+<div class="route-city"><div class="dot">🕌</div><div class="name">科尔多瓦</div><div class="days">Day 3</div></div>
+<span class="route-arrow">→</span>
+<div class="route-city"><div class="dot">💃</div><div class="name">塞维利亚</div><div class="days">Day 4-5</div></div>
+<span class="route-arrow">→</span>
+<div class="route-city"><div class="dot">🏘️</div><div class="name">龙达</div><div class="days">Day 6</div></div>
+<span class="route-arrow">→</span>
+<div class="route-city"><div class="dot">☀️</div><div class="name">马拉加</div><div class="days">Day 6-7</div></div>
+<span class="route-arrow">→</span>
+<div class="route-city"><div class="dot">🎨</div><div class="name">巴塞罗那</div><div class="days">Day 8-9</div></div>
+</div>
+</section>
+
+<!-- Day-by-day Itinerary -->
+<section class="section" id="itinerary">
+<div class="section-title">
+<div class="icon" style="background:rgba(241,191,0,.12);color:#f1bf00">📋</div>
+<h2>每日行程</h2>
+</div>
+
+<div class="day-card d1">
+<div class="day-header">
+<span class="day-num">Day 1</span>
+<span class="day-date">10月1日 周四</span>
+<span class="day-city">📍 马德里</span>
+</div>
+<h3>抵达马德里</h3>
+<div class="schedule">
+<div class="schedule-item"><span class="time">下午</span><span class="desc">抵达马德里巴拉哈斯机场 <span class="tag tag-self">✈️ 自行订票</span></span></div>
+<div class="schedule-item"><span class="time">傍晚</span><span class="desc">入住酒店，休整适应时差 <span class="tag tag-hotel">🏨 地接安排</span></span></div>
+<div class="schedule-item"><span class="time">晚上</span><span class="desc">马德里市区自由活动，可逛太阳门广场 / 格兰大道 <span class="tag tag-free">🚶 自由</span></span></div>
+</div>
+</div>
+
+<div class="day-card d2">
+<div class="day-header">
+<span class="day-num">Day 2</span>
+<span class="day-date">10月2日 周五</span>
+<span class="day-city">📍 马德里 → 托莱多</span>
+</div>
+<h3>马德里市区 + 托莱多一日游</h3>
+<div class="schedule">
+<div class="schedule-item"><span class="time">上午</span><span class="desc">马德里王宫 / 普拉多博物馆 <span class="tag tag-agent">🚌 地接导游</span></span></div>
+<div class="schedule-item"><span class="time">下午</span><span class="desc">驱车前往托莱多古城（约1h），游览大教堂、古城墙 <span class="tag tag-agent">🚌 地接导游</span></span></div>
+<div class="schedule-item"><span class="time">晚上</span><span class="desc">返回马德里，晚餐推荐圣米格尔市场 <span class="tag tag-food">🍽️ 自理</span></span></div>
+</div>
+</div>
+
+<div class="day-card d3">
+<div class="day-header">
+<span class="day-num">Day 3</span>
+<span class="day-date">10月3日 周六</span>
+<span class="day-city">📍 马德里 → 科尔多瓦</span>
+</div>
+<h3>南下科尔多瓦</h3>
+<div class="schedule">
+<div class="schedule-item"><span class="time">上午</span><span class="desc">马德里出发前往科尔多瓦 <span class="tag tag-agent">🚗 地接包车</span></span></div>
+<div class="schedule-item"><span class="time">下午</span><span class="desc">游览科尔多瓦清真寺-大教堂（世界遗产）、犹太区、花巷 <span class="tag tag-agent">🚌 地接导游</span></span></div>
+<div class="schedule-item"><span class="time">晚上</span><span class="desc">入住科尔多瓦酒店 <span class="tag tag-hotel">🏨 地接安排</span></span></div>
+</div>
+</div>
+
+<div class="day-card d4">
+<div class="day-header">
+<span class="day-num">Day 4</span>
+<span class="day-date">10月4日 周日</span>
+<span class="day-city">📍 科尔多瓦 → 塞维利亚</span>
+</div>
+<h3>前往塞维利亚</h3>
+<div class="schedule">
+<div class="schedule-item"><span class="time">上午</span><span class="desc">科尔多瓦出发前往塞维利亚（约1.5h） <span class="tag tag-agent">🚗 地接包车</span></span></div>
+<div class="schedule-item"><span class="time">下午</span><span class="desc">塞维利亚王宫（权力的游戏取景地）、塞维利亚大教堂 & 希拉达塔 <span class="tag tag-agent">🚌 地接导游</span></span></div>
+<div class="schedule-item"><span class="time">晚上</span><span class="desc">入住塞维利亚酒店 <span class="tag tag-hotel">🏨 地接安排</span></span></div>
+</div>
+</div>
+
+<div class="day-card d5">
+<div class="day-header">
+<span class="day-num">Day 5</span>
+<span class="day-date">10月5日 周一</span>
+<span class="day-city">📍 塞维利亚</span>
+</div>
+<h3>塞维利亚深度游</h3>
+<div class="schedule">
+<div class="schedule-item"><span class="time">上午</span><span class="desc">西班牙广场、玛丽亚路易莎公园 <span class="tag tag-agent">🚌 地接导游</span></span></div>
+<div class="schedule-item"><span class="time">下午</span><span class="desc">圣十字区漫步、瓜达尔基维尔河畔散步 <span class="tag tag-free">🚶 自由</span></span></div>
+<div class="schedule-item"><span class="time">晚上</span><span class="desc">弗拉门戈表演（可选） <span class="tag tag-food">🎭 自理</span></span></div>
+</div>
+</div>
+
+<div class="day-card d6">
+<div class="day-header">
+<span class="day-num">Day 6</span>
+<span class="day-date">10月6日 周二</span>
+<span class="day-city">📍 塞维利亚 → 龙达 → 马拉加</span>
+</div>
+<h3>白色小镇之路</h3>
+<div class="schedule">
+<div class="schedule-item"><span class="time">上午</span><span class="desc">前往龙达（约2h），游览新桥（Puente Nuevo）、龙达斗牛场 <span class="tag tag-agent">🚗 地接包车</span></span></div>
+<div class="schedule-item"><span class="time">下午</span><span class="desc">继续前往马拉加（约1.5h），马拉加老城漫步 <span class="tag tag-agent">🚗 地接包车</span></span></div>
+<div class="schedule-item"><span class="time">晚上</span><span class="desc">入住马拉加酒店 <span class="tag tag-hotel">🏨 地接安排</span></span></div>
+</div>
+</div>
+
+<div class="day-card d7">
+<div class="day-header">
+<span class="day-num">Day 7</span>
+<span class="day-date">10月7日 周三</span>
+<span class="day-city">📍 马拉加 / 太阳海岸</span>
+</div>
+<h3>阳光海岸休闲日</h3>
+<div class="schedule">
+<div class="schedule-item"><span class="time">上午</span><span class="desc">马拉加毕加索博物馆 / 阿尔卡萨瓦城堡 <span class="tag tag-agent">🚌 地接导游</span></span></div>
+<div class="schedule-item"><span class="time">下午</span><span class="desc">太阳海岸自由活动，海滩放松 <span class="tag tag-free">🏖️ 自由</span></span></div>
+<div class="schedule-item"><span class="time">晚上</span><span class="desc">马拉加海鲜晚餐 <span class="tag tag-food">🍽️ 自理</span></span></div>
+</div>
+</div>
+
+<div class="day-card d8">
+<div class="day-header">
+<span class="day-num">Day 8</span>
+<span class="day-date">10月8日 周四</span>
+<span class="day-city">📍 马拉加 → 巴塞罗那</span>
+</div>
+<h3>北上巴塞罗那</h3>
+<div class="schedule">
+<div class="schedule-item"><span class="time">上午</span><span class="desc">马拉加 → 巴塞罗那（飞机或高铁，地接安排） <span class="tag tag-agent">✈️ 地接安排</span></span></div>
+<div class="schedule-item"><span class="time">下午</span><span class="desc">兰布拉大道、波盖利亚市场、哥特区 <span class="tag tag-free">🚶 自由</span></span></div>
+<div class="schedule-item"><span class="time">晚上</span><span class="desc">入住巴塞罗那酒店 <span class="tag tag-hotel">🏨 地接安排</span></span></div>
+</div>
+</div>
+
+<div class="day-card d9">
+<div class="day-header">
+<span class="day-num">Day 9</span>
+<span class="day-date">10月9日 周五</span>
+<span class="day-city">📍 巴塞罗那 → 返程</span>
+</div>
+<h3>巴塞罗那 & 返程</h3>
+<div class="schedule">
+<div class="schedule-item"><span class="time">上午</span><span class="desc">圣家堂（世界遗产）/ 巴特罗之家 <span class="tag tag-agent">🚌 地接导游</span></span></div>
+<div class="schedule-item"><span class="time">下午</span><span class="desc">前往机场，搭乘返程航班 <span class="tag tag-self">✈️ 自行订票</span></span></div>
+</div>
+</div>
+</section>
+
+<!-- Responsibility -->
+<section class="section" id="responsibility">
+<div class="section-title">
+<div class="icon" style="background:rgba(0,113,227,.12);color:#60a5fa">🤝</div>
+<h2>分工明细</h2>
+</div>
+
+<div class="resp-grid">
+<div class="resp-card agent">
+<h3>🏢 地接负责 <span class="badge">Ground Handler</span></h3>
+<ul>
+<li>全程8晚酒店住宿</li>
+<li>城际包车 + 司机（含油费、过路费）</li>
+<li>各城市中文导游陪同讲解</li>
+<li>部分景点门票代订</li>
+<li>马拉加 → 巴塞罗那内陆段交通</li>
+<li>行程路线规划与建议</li>
+<li>餐厅推荐 & 预订协助</li>
+<li>紧急联络 & 24h 中文客服</li>
+</ul>
+</div>
+<div class="resp-card self">
+<h3>🧳 我们负责 <span class="badge">Self-arranged</span></h3>
+<ul>
+<li>国际往返机票（中国 ↔ 西班牙）</li>
+<li>申根签证申请 & 材料准备</li>
+<li>旅行保险（申根险）</li>
+<li>日常餐饮费用</li>
+<li>个人消费 & 购物</li>
+<li>小费 & 零花</li>
+<li>自选活动（弗拉门戈等）</li>
+<li>行李 & 个人物品</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Budget -->
+<section class="section" id="budget">
+<div class="section-title">
+<div class="icon" style="background:rgba(52,199,89,.12);color:#34d399">💰</div>
+<h2>预算参考</h2>
+</div>
+<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden">
+<table class="budget-table">
+<thead><tr><th>项目</th><th>负责方</th><th class="amount">预估费用/人</th></tr></thead>
+<tbody>
+<tr><td>国际往返机票</td><td><span class="who self">我们</span></td><td class="amount">¥5,000-8,000</td></tr>
+<tr><td>地接套餐（含住宿+车+导游）</td><td><span class="who agent">地接</span></td><td class="amount">待确认</td></tr>
+<tr><td>申根签证</td><td><span class="who self">我们</span></td><td class="amount">¥800-1,200</td></tr>
+<tr><td>旅行保险</td><td><span class="who self">我们</span></td><td class="amount">¥200-400</td></tr>
+<tr><td>餐饮（9天）</td><td><span class="who self">我们</span></td><td class="amount">¥3,000-5,000</td></tr>
+<tr><td>个人消费 & 购物</td><td><span class="who self">我们</span></td><td class="amount">丰俭由人</td></tr>
+<tr><td>小费 & 零花</td><td><span class="who self">我们</span></td><td class="amount">¥500-1,000</td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:.78rem;color:var(--text-dim);margin-top:10px;text-align:center">* 地接套餐费用待最终确认，以上为参考范围</p>
+</section>
+
+<!-- Tips -->
+<section class="section" id="tips">
+<div class="section-title">
+<div class="icon" style="background:rgba(175,82,222,.12);color:#c77dff">💡</div>
+<h2>出行贴士</h2>
+</div>
+<div class="tip-grid">
+<div class="tip-card">
+<div class="tip-icon">🌡️</div>
+<h4>10月天气</h4>
+<p>马德里 12-22°C，南部安达卢西亚 15-28°C，巴塞罗那 16-24°C。带薄外套和防晒。</p>
+</div>
+<div class="tip-card">
+<div class="tip-icon">🔌</div>
+<h4>电源插头</h4>
+<p>西班牙使用欧标两圆孔插头（Type C/F），需带转换插头。</p>
+</div>
+<div class="tip-card">
+<div class="tip-icon">💶</div>
+<h4>货币</h4>
+<p>使用欧元（€），大部分地方支持刷卡，建议带少量现金。</p>
+</div>
+<div class="tip-card">
+<div class="tip-icon">🕐</div>
+<h4>时差</h4>
+<p>西班牙10月仍为夏令时（UTC+2），比北京慢6小时。</p>
+</div>
+<div class="tip-card">
+<div class="tip-icon">👗</div>
+<h4>着装建议</h4>
+<p>教堂需着装得体，避免短裤拖鞋。建议舒适步行鞋。</p>
+</div>
+<div class="tip-card">
+<div class="tip-icon">📱</div>
+<h4>通讯</h4>
+<p>建议提前购买欧洲 eSIM 或当地 SIM 卡，方便导航联系。</p>
+</div>
+</div>
+</section>
+
+</div>
+
+<footer class="footer">
+<p>西班牙行程规划 · 2026.10 · <a href="https://main.skj1023.top">Lance App Hub</a></p>
+</footer>
+
+<script>
+// Nav active state
+document.querySelectorAll('.nav a').forEach(a=>{
+  a.addEventListener('click',function(){
+    document.querySelectorAll('.nav a').forEach(n=>n.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+// Scroll spy
+const sections=document.querySelectorAll('.section[id]');
+const navLinks=document.querySelectorAll('.nav a');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{
+    const top=s.offsetTop-100;
+    if(scrollY>=top)current=s.id;
+  });
+  navLinks.forEach(a=>{
+    a.classList.remove('active');
+    if(a.getAttribute('href')==='#'+current)a.classList.add('active');
+  });
+},{passive:true});
+</script>
+</body>
+</html>
