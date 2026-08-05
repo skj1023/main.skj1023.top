@@ -1,0 +1,46 @@
+2022|11|ChatGPT 公开发布|重点|对话式 AI 第一次以极低门槛进入大众生活。|AI 从后台模型变成了每个人都能直接使用的产品入口。|https://openai.com/index/chatgpt/
+2022|12|“它居然真的会写”|小节点|社交平台开始大量分享提示词、作文、代码和对话截图。|AI 的第一轮扩散来自普通人的亲身试用。|https://openai.com/index/chatgpt/
+2023|01|AI 使用从尝鲜变成日常话题|小节点|学校、媒体和公司开始讨论写作、搜索和知识工作会不会被重新定义。|“AI 会不会替代人”成为大众问题。|https://openai.com/index/chatgpt/
+2023|02|Bing Chat 与生成式搜索|重点|微软将对话模型接进搜索入口，搜索不再只是返回链接。|AI 开始争夺浏览器、搜索和信息获取入口。|https://blogs.microsoft.com/blog/2023/02/07/reinventing-search-with-a-new-ai-powered-bing-and-microsoft-edge-your-copilot-for-the-web/
+2023|03|GPT-4 与 Midjourney V5|重点|更强的复杂任务能力与更逼真的图像生成同时出现。|生成式 AI 从聊天玩具变成创作和专业工作的基础设施。|https://openai.com/index/gpt-4-research/
+2023|04|AutoGPT：Agent 想象提前出现|小节点|社区尝试让模型自己拆解任务、调用工具并循环执行。|让 AI 自己做完一件事的愿望，比稳定工程方法更早到来。|https://github.com/Significant-Gravitas/AutoGPT
+2023|05|PaLM 2、Bard 与模型竞赛公开化|重点|Google 等公司正式把大模型带进产品竞争。|AI 竞争进入平台、搜索、办公和云服务的全面竞赛。|https://blog.google/technology/ai/google-palm-2-ai-large-language-model/
+2023|06|RAG 与企业知识库成为落地关键词|小节点|企业探索让模型检索内部资料，而不是只依赖训练记忆。|给模型接上自己的资料，成为早期企业 AI 架构。|https://arxiv.org/abs/2005.11401
+2023|07|Code Interpreter 开放|重点|模型开始运行 Python、分析文件、生成图表和处理数据。|AI 从给建议迈向在受控环境中实际操作。|https://openai.com/index/code-interpreter/
+2023|08|Custom Instructions：AI 开始记住偏好|小节点|用户可以告诉 ChatGPT 自己是谁、喜欢怎样的回答。|个性化和上下文成为 AI 产品体验的重要组成部分。|https://openai.com/index/custom-instructions-for-chatgpt/
+2023|09|语音、图像输入与实时对话|重点|AI 开始能看图、听语音、用更自然的方式交流。|人与 AI 的交互从键盘文本扩展到多模态沟通。|https://openai.com/index/chatgpt-can-see-hear-and-speak/
+2023|10|DALL·E 3 与内容安全讨论|小节点|图像生成更容易控制，版权、肖像和内容边界进入公众视野。|生成能力变强的同时，社会开始要求可控和负责任。|https://openai.com/index/dall-e-3/
+2023|11|GPTs、GPT-4 Turbo 与 DevDay|重点|模型可以被配置成专门助手，开发者获得更多工具和上下文能力。|AI 从一个通用聊天框分化成应用生态。|https://openai.com/index/introducing-gpts/
+2023|12|Gemini 1.0 与多模态模型竞争|重点|Google 发布 Gemini，模型竞争进入多模态和平台生态阶段。|谁拥有最强模型成为产品、云和搜索的战略问题。|https://blog.google/technology/ai/google-gemini-ai/
+2024|01|GPT Store 与个人 AI 应用目录|小节点|定制助手开始以应用目录方式被发现和分享。|AI 应用分发开始寻找类似 App Store 的新形态。|https://openai.com/index/introducing-the-gpt-store/
+2024|02|Sora：生成视频与世界模型想象|重点|文本生成视频把生成式 AI 推向动态场景、镜头和物理世界。|AI 被期待的不只是生成内容，而是理解和模拟世界。|https://openai.com/index/sora/
+2024|03|Claude 3 与开放模型竞速|重点|Claude 3 把长文本、视觉和复杂任务能力带入更广泛比较。|模型评测从单一分数走向任务、上下文和成本综合比较。|https://www.anthropic.com/news/claude-3-family
+2024|04|Llama 3：开源模型进入主流|重点|Meta 发布 Llama 3，开放权重模型成为生态竞争力量。|能力不再只在少数 API 中，也可以本地部署。|https://ai.meta.com/blog/meta-llama-3/
+2024|05|GPT-4o：实时多模态体验|重点|文本、视觉和语音在更自然的实时交互中统一起来。|AI 助手开始更像可以看、听、说的实时伙伴。|https://openai.com/index/hello-gpt-4o/
+2024|06|Artifacts 与工作空间式 AI|小节点|生成结果被放进可持续编辑、预览和迭代的空间。|AI 输出从聊天记录变成可以继续工作的对象。|https://www.anthropic.com/news/claude-3-5-sonnet
+2024|07|Claude 3.5 Sonnet 与 Computer Use|重点|代码、视觉理解和电脑操作成为模型能力的下一站。|竞争从回答像不像人转向能否操作真实软件。|https://www.anthropic.com/news/3-5-models-and-computer-use
+2024|08|小模型、量化和本地 AI 扩散|小节点|模型压缩和消费级硬件让本地运行越来越可行。|AI 的未来不只属于云端，也进入个人电脑和边缘设备。|https://github.com/ggerganov/llama.cpp
+2024|09|o1：推理时间成为新变量|重点|OpenAI 把更多回答前计算用于复杂推理，推理模型成为新类别。|模型可以通过想得更久换取更好的复杂问题表现。|https://openai.com/index/introducing-openai-o1-preview/
+2024|10|Computer Use 与 Agent 工程问题暴露|小节点|模型尝试操作浏览器和桌面，可靠性、权限和安全成为核心问题。|Agent 的难点不只在模型，而在环境、工具、反馈和恢复。|https://www.anthropic.com/news/3-5-models-and-computer-use
+2024|11|AI 编程从补全走向代码库协作|重点|工具开始参与理解项目、编辑文件和运行测试。|开发者的工作单位从一行代码变成一个软件任务。|https://code.claude.com/docs/en/best-practices
+2024|12|Gemini 2.0 与 o3：Agent 信号|重点|新一代模型同时强调推理、多模态和工具使用。|行业开始把能否完成任务放在能否生成漂亮答案之前。|https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/
+2025|01|DeepSeek-R1 与低成本推理冲击|重点|DeepSeek-R1 让推理、开源、蒸馏和成本效率成为全球讨论中心。|更强 AI 不一定只能走更大、更贵、更封闭的路线。|https://github.com/deepseek-ai/DeepSeek-R1
+2025|02|Claude 3.7：混合推理产品化|重点|思考模式和快速回答被放进同一个产品体验。|推理从实验室能力变成用户可以选择的工作模式。|https://www.anthropic.com/news/claude-3-7-sonnet
+2025|03|MCP：模型连接工具的接口层|重点|Anthropic 发布 Model Context Protocol，连接模型与数据、工具。|Agent 生态开始需要插座标准，而不只是更强模型。|https://www.anthropic.com/news/model-context-protocol
+2025|04|Llama 4、GPT-4.1 与开发者工作流|重点|模型竞争继续向代码、长上下文、工具调用和成本效率集中。|模型能力和开发者环境、评测、权限与流程绑在一起。|https://ai.meta.com/blog/llama-4-multimodal-intelligence/
+2025|05|AI coding agent 与 vibe coding 扩散|重点|更多人用自然语言描述目标，让 AI 创建、修改和调试应用。|编程门槛下降，但审查、测试和需求表达更重要。|https://code.claude.com/docs/en/best-practices
+2025|06|Harness Engineering 成为新工程视角|重点|团队把工具、上下文、测试、反馈、权限和记忆设计成 Agent 工作环境。|Prompt 不再是全部，稳定 AI 工作依赖可观测、可恢复的 Harness。|https://code.claude.com/docs/en/best-practices
+2025|07|ChatGPT agent：从回答到执行任务|重点|AI 把浏览、研究、文件处理和行动组合成完整任务流程。|产品评价从一次回答质量转向任务完成率与可控性。|https://openai.com/index/introducing-chatgpt-agent/
+2025|08|多 Agent 和个人自动化进入实践|小节点|研究、写作、编程和信息整理被拆成多个可以协作的角色。|AI 开始像一个小团队，而不是单一聊天对象。|https://www.anthropic.com/news/model-context-protocol
+2025|09|长期记忆与主动式助手被重新讨论|小节点|用户期待 AI 记住偏好并持续推进目标。|上下文窗口逐渐扩展为长期关系和持续任务。|https://openai.com/index/memory-and-new-controls-for-chatgpt/
+2025|10|电脑、浏览器和终端成为 Agent 工作台|小节点|AI 核心场景扩展到开发环境、浏览器、文件系统和企业软件。|真正的 Agent 需要一个可以观察、操作和验证的世界。|https://www.anthropic.com/news/3-5-models-and-computer-use
+2025|11|AI 产品竞争进入系统阶段|小节点|模型、工具、数据、权限、评测、记忆和体验被放在一起比较。|最强模型逐渐让位于最能完成真实事情的系统。|https://www.anthropic.com/news/model-context-protocol
+2025|12|从 Copilot 到数字协作者|重点|AI 助手开始被期待长期参与项目，而不只是临时补充内容。|人类从执行每一步转向设定目标、监督过程和验收结果。|https://code.claude.com/docs/en/best-practices
+2026|01|个人 AI 的常驻化趋势|小节点|AI 从被打开的网站，变成连接文件、消息和工具的常驻层。|个人 AI 开始成为产品形态，而不仅是聊天功能。|https://github.com/openclaw/openclaw
+2026|02|OpenClaw：让 AI 进入个人工作环境|重点|以个人环境为中心的 Agent 形态受到关注，重点转向授权后能做什么。|AI 被想象成连接本地资料、应用和日常任务的数字伙伴。|https://github.com/openclaw/openclaw
+2026|03|Agent 安全与授权成为日常问题|小节点|AI 能读取资料、调用工具和执行操作后，权限、确认和审计不可回避。|AI 越能做事，就越需要边界和可追溯记录。|https://www.anthropic.com/news/3-5-models-and-computer-use
+2026|04|从 Prompt Engineering 到 Harness Engineering|重点|行业转向设计 Agent 的上下文、工具、测试和反馈闭环。|可靠性不再只靠更强模型，而要靠更好的工作环境。|https://code.claude.com/docs/en/best-practices
+2026|05|Agent 评测从答案转向任务结果|小节点|实践开始观察完成率、失败恢复、成本、延迟和人工接管次数。|AI 的真实价值越来越像软件工程指标。|https://www.anthropic.com/news/model-context-protocol
+2026|06|AI 成为个人工作流的编排层|重点|研究、写作、开发、旅行和信息管理被连接成连续流程。|AI 从工具之一上移到协调工具的工作层。|https://github.com/openclaw/openclaw
+2026|07|人类重新定义“完成一件事”|小节点|当 AI 推进大量中间步骤，人类更关注目标、判断、取舍和责任。|工作单位从动作转向结果。|https://code.claude.com/docs/en/best-practices
+2026|08|我们站在：会做事，但还不够可靠|重点|截至当前，AI 已从聊天走向工具、代码、浏览器和个人环境，但稳定性与信任仍未解决。|下一阶段的核心问题是：什么时候可以放心让它做。|https://www.anthropic.com/news/model-context-protocol
