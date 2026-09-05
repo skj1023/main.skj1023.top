@@ -1,0 +1,302 @@
+[
+  {
+    "id": "golden-sun",
+    "title": "黄金太阳：开启的封印",
+    "platform": "GBA",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/golden-sun/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Golden%20Sun%20(USA,%20Europe).png",
+        "label": "封面"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/golden-sun/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Snaps/Golden%20Sun%20(USA,%20Europe).png",
+        "label": "实机画面"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/golden-sun/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Titles/Golden%20Sun%20(USA,%20Europe).png",
+        "label": "标题画面"
+      }
+    ]
+  },
+  {
+    "id": "minish-cap",
+    "title": "塞尔达传说：神奇帽子",
+    "platform": "GBA",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/minish-cap/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Legend%20of%20Zelda,%20The%20-%20The%20Minish%20Cap%20(USA).png",
+        "label": "封面"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/minish-cap/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Snaps/Legend%20of%20Zelda,%20The%20-%20The%20Minish%20Cap%20(USA).png",
+        "label": "实机画面"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/minish-cap/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Titles/Legend%20of%20Zelda,%20The%20-%20The%20Minish%20Cap%20(USA).png",
+        "label": "标题画面"
+      }
+    ]
+  },
+  {
+    "id": "sacred-stones",
+    "title": "火焰之纹章：圣魔之光石",
+    "platform": "GBA",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/sacred-stones/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Fire%20Emblem%20-%20The%20Sacred%20Stones%20(Europe)%20(En,Fr,De,Es,It).png",
+        "label": "封面"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/sacred-stones/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Snaps/Fire%20Emblem%20-%20The%20Sacred%20Stones%20(USA,%20Australia).png",
+        "label": "实机画面"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/sacred-stones/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Titles/Fire%20Emblem%20-%20The%20Sacred%20Stones%20(USA,%20Australia).png",
+        "label": "标题画面"
+      }
+    ]
+  },
+  {
+    "id": "mario-kart",
+    "title": "马里奥赛车：超级巡回赛",
+    "platform": "GBA",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/mario-kart/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Mario%20Kart%20-%20Super%20Circuit%20(USA).png",
+        "label": "封面"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/mario-kart/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Snaps/Mario%20Kart%20-%20Super%20Circuit%20(USA).png",
+        "label": "实机画面"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/mario-kart/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Titles/Mario%20Kart%20-%20Super%20Circuit%20(USA).png",
+        "label": "标题画面"
+      }
+    ]
+  },
+  {
+    "id": "superstar-saga",
+    "title": "马里奥与路易：超级明星传奇",
+    "platform": "GBA",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/superstar-saga/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Mario%20_%20Luigi%20-%20Superstar%20Saga%20(USA).png",
+        "label": "封面"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/superstar-saga/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Snaps/Mario%20_%20Luigi%20-%20Superstar%20Saga%20(USA).png",
+        "label": "实机画面"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/superstar-saga/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Titles/Mario%20_%20Luigi%20-%20Superstar%20Saga%20(USA).png",
+        "label": "标题画面"
+      }
+    ]
+  },
+  {
+    "id": "ace-attorney",
+    "title": "逆转裁判：苏醒的逆转",
+    "platform": "GBA",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/ace-attorney/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Gyakuten%20Saiban%20(Japan).png",
+        "label": "封面"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/ace-attorney/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Snaps/Gyakuten%20Saiban%20(Japan).png",
+        "label": "实机画面"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/ace-attorney/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Titles/Gyakuten%20Saiban%20(Japan).png",
+        "label": "标题画面"
+      }
+    ]
+  },
+  {
+    "id": "patapon-2",
+    "title": "Patapon 2",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/patapon-2/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/Patapon%202%20(USA).png",
+        "label": "封面"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/patapon-2/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/Patapon%202%20(USA).png",
+        "label": "实机画面"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/patapon-2/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Titles/Patapon%202%20(Europe)%20(En,Fr,De,Es,It).png",
+        "label": "标题画面"
+      }
+    ]
+  },
+  {
+    "id": "locoroco-2",
+    "title": "LocoRoco 2",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/locoroco-2/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/LocoRoco%202%20(Europe)%20(En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi,Ru).png",
+        "label": "封面"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/locoroco-2/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/LocoRoco%202%20(Europe)%20(En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi,Ru).png",
+        "label": "实机画面"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/locoroco-2/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Titles/LocoRoco%202%20(Europe)%20(En,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi,Ru).png",
+        "label": "标题画面"
+      }
+    ]
+  },
+  {
+    "id": "type-0",
+    "title": "最终幻想：零式",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/type-0/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/Final%20Fantasy%20Reishiki%20(Japan)%20(v1.01).png",
+        "label": "封面"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/type-0/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/Final%20Fantasy%20Reishiki%20(Japan)%20(v1.01).png",
+        "label": "实机画面"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/type-0/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Titles/Final%20Fantasy%20Reishiki%20(Japan)%20(v1.01).png",
+        "label": "标题画面"
+      }
+    ]
+  },
+  {
+    "id": "freedom-unite",
+    "title": "怪物猎人：自由联合",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/freedom-unite/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/Monster%20Hunter%20Freedom%20Unite%20(USA)%20(En,Fr,De,Es,It).png",
+        "label": "封面"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/freedom-unite/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/Monster%20Hunter%20Freedom%20Unite%20(USA)%20(En,Fr,De,Es,It).png",
+        "label": "实机画面"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/freedom-unite/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Titles/Monster%20Hunter%20Freedom%20Unite%20(Europe)%20(En,Fr,De,Es,It).png",
+        "label": "标题画面"
+      }
+    ]
+  },
+  {
+    "id": "chains-olympus",
+    "title": "战神：奥林匹斯之链",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/chains-olympus/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/God%20of%20War%20-%20Chains%20of%20Olympus%20(USA).png",
+        "label": "封面"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/chains-olympus/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/God%20of%20War%20-%20Chains%20of%20Olympus%20(USA).png",
+        "label": "实机画面"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/chains-olympus/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Titles/God%20of%20War%20-%20Chains%20of%20Olympus%20(USA).png",
+        "label": "标题画面"
+      }
+    ]
+  },
+  {
+    "id": "third-birthday",
+    "title": "寄生前夜 3：第三次生日",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/third-birthday/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/3rd%20Birthday,%20The%20(USA).png",
+        "label": "封面"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/third-birthday/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/3rd%20Birthday,%20The%20(USA).png",
+        "label": "实机画面"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/third-birthday/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Titles/3rd%20Birthday,%20The%20(USA).png",
+        "label": "标题画面"
+      }
+    ]
+  }
+]
