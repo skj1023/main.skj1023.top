@@ -298,5 +298,243 @@
         "label": "标题画面"
       }
     ]
+  },
+  {
+    "id": "ghost-sparta",
+    "title": "战神：斯巴达之魂",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/ghost-sparta/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/God%20of%20War%20-%20Ghost%20of%20Sparta%20%28USA%29%20%28En%2CFr%2CEs%29.png",
+        "label": "cover"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/ghost-sparta/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/God%20of%20War%20-%20Ghost%20of%20Sparta%20%28USA%29%20%28En%2CFr%2CEs%29.png",
+        "label": "screenshot"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/ghost-sparta/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Titles/God%20of%20War%20-%20Ghost%20of%20Sparta%20%28USA%29%20%28En%2CFr%2CEs%29.png",
+        "label": "title"
+      }
+    ]
+  },
+  {
+    "id": "dante-inferno",
+    "title": "但丁的地狱",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/dante-inferno/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/Dante%27s%20Inferno%20%28USA%29%20%28v1.01%29.png",
+        "label": "cover"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/dante-inferno/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/Dante%27s%20Inferno%20%28USA%29.png",
+        "label": "screenshot"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/dante-inferno/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Titles/Dante%27s%20Inferno%20%28USA%29%20%28v1.01%29.png",
+        "label": "title"
+      }
+    ]
+  },
+  {
+    "id": "daxter",
+    "title": "达斯特",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/daxter/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/Daxter%20%28USA%29.png",
+        "label": "cover"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/daxter/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/Daxter%20%28USA%29.png",
+        "label": "screenshot"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/daxter/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Titles/Daxter%20%28Korea%29%20%28En%2CFr%2CDe%2CEs%2CIt%2CKo%29.png",
+        "label": "title"
+      }
+    ]
+  },
+  {
+    "id": "maverick-x",
+    "title": "洛克人X：反乱猎人",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/maverick-x/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/Mega%20Man%20-%20Maverick%20Hunter%20X%20%28USA%29.png",
+        "label": "cover"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/maverick-x/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/Irregular%20Hunter%20X%20%28Japan%2C%20Asia%29.png",
+        "label": "screenshot"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/maverick-x/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Titles/Mega%20Man%20-%20Maverick%20Hunter%20X%20%28USA%29.png",
+        "label": "title"
+      }
+    ]
+  },
+  {
+    "id": "prinny",
+    "title": "普利尼：俺当主角行吗",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/prinny/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/Prinny%20-%20Can%20I%20Really%20Be%20the%20Hero%20%28USA%29.png",
+        "label": "cover"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/prinny/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/Prinny%20-%20Can%20I%20Really%20Be%20the%20Hero%20%28USA%29.png",
+        "label": "screenshot"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/prinny/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Titles/Prinny%20-%20Can%20I%20Really%20Be%20the%20Hero%20%28USA%29.png",
+        "label": "title"
+      }
+    ]
+  },
+  {
+    "id": "blazblue-cs2",
+    "title": "苍翼默示录：连锁反应2",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/blazblue-cs2/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/BlazBlue%20-%20Continuum%20Shift%20II%20%28USA%29%20%28En%2CJa%2CZh%2CKo%29.png",
+        "label": "cover"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/blazblue-cs2/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/BlazBlue%20-%20Continuum%20Shift%20II%20%28USA%29%20%28En%2CJa%2CZh%2CKo%29.png",
+        "label": "screenshot"
+      }
+    ]
+  },
+  {
+    "id": "initial-d",
+    "title": "头文字D：公路传说",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/initial-d/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/Initial%20D%20-%20Street%20Stage%20%28Japan%29.png",
+        "label": "cover"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/initial-d/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/Initial%20D%20-%20Street%20Stage%20%28Japan%29.png",
+        "label": "screenshot"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/initial-d/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Titles/Initial%20D%20-%20Street%20Stage%20%28Korea%29%20%28v1.01%29.png",
+        "label": "title"
+      }
+    ]
+  },
+  {
+    "id": "gran-turismo",
+    "title": "GT赛车",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/gran-turismo/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/Gran%20Turismo%20%28USA%29%20%28En%2CFr%2CEs%29.png",
+        "label": "cover"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/gran-turismo/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/Gran%20Turismo%20%28USA%29%20%28En%2CFr%2CEs%29%20%28v1.00%29.png",
+        "label": "screenshot"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/gran-turismo/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Titles/Gran%20Turismo%20%28Asia%29%20%28En%2CZh%2CKo%29.png",
+        "label": "title"
+      }
+    ]
+  },
+  {
+    "id": "hotshots-tennis",
+    "title": "大众网球",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/hotshots-tennis/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/Hot%20Shots%20Tennis%20-%20Get%20a%20Grip%20%28USA%29%20%28v1.01%29.png",
+        "label": "cover"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/hotshots-tennis/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/Hot%20Shots%20Tennis%20-%20Get%20a%20Grip%20%28USA%29%20%28En%2CFr%2CEs%29.png",
+        "label": "screenshot"
+      }
+    ]
+  },
+  {
+    "id": "badman",
+    "title": "勇者别嚣张",
+    "platform": "PSP",
+    "images": [
+      {
+        "kind": "cover",
+        "path": "handheld-assets/badman/cover.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Boxarts/Holy%20Invasion%20of%20Privacy%2C%20Badman%21%20What%20Did%20I%20Do%20to%20Deserve%20This%20%28Europe%29%20%28En%2CFr%2CDe%2CEs%2CIt%29.png",
+        "label": "cover"
+      },
+      {
+        "kind": "screenshot",
+        "path": "handheld-assets/badman/screenshot.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Snaps/Holy%20Invasion%20of%20Privacy%2C%20Badman%21%20What%20Did%20I%20Do%20to%20Deserve%20This%20%28Europe%29%20%28En%2CFr%2CDe%2CEs%2CIt%29%20%28v1.03%29.png",
+        "label": "screenshot"
+      },
+      {
+        "kind": "title",
+        "path": "handheld-assets/badman/title.png",
+        "source": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Portable/master/Named_Titles/Holy%20Invasion%20of%20Privacy%2C%20Badman%21%20What%20Did%20I%20Do%20to%20Deserve%20This%20%28Europe%29%20%28En%2CFr%2CDe%2CEs%2CIt%29.png",
+        "label": "title"
+      }
+    ]
   }
 ]
