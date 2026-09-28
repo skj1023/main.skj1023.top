@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>纽约时报 · 21世纪最佳100部电视剧</title>
+<style>
+  :root{
+    --bg:#0d0f14;
+    --panel:#151922;
+    --panel-2:#1b2029;
+    --line:#262c38;
+    --text:#e8eaf0;
+    --muted:#98a0b3;
+    --gold:#f5c518;
+    --accent:#5b8cff;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:radial-gradient(1200px 600px at 50% -10%, #1c2333 0%, var(--bg) 60%);
+    color:var(--text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+  header.hero{
+    padding:64px 0 32px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+    margin-bottom:28px;
+  }
+  .kicker{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+    border:1px solid rgba(245,197,24,.35);
+    border-radius:999px;
+    padding:6px 14px;
+    margin-bottom:20px;
+  }
+  h1{
+    margin:0 0 14px;
+    font-size:clamp(28px,5vw,46px);
+    font-weight:800;
+    letter-spacing:-.5px;
+    line-height:1.25;
+  }
+  h1 em{
+    font-style:normal;
+    background:linear-gradient(90deg,#f5c518,#ff9d3d);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .sub{color:var(--muted);max-width:760px;margin:0 auto;font-size:15px}
+  .sub a{color:var(--accent)}
+  .toolbar{
+    position:sticky;top:0;z-index:20;
+    background:rgba(13,15,20,.86);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+    margin-bottom:26px;
+  }
+  .toolbar .inner{
+    max-width:1180px;margin:0 auto;padding:12px 20px;
+    display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+  }
+  #q{
+    flex:1 1 240px;min-width:180px;
+    background:var(--panel);border:1px solid var(--line);color:var(--text);
+    border-radius:10px;padding:10px 14px;font-size:14px;outline:none;
+  }
+  #q:focus{border-color:var(--accent)}
+  #sortsel{
+    background:var(--panel);border:1px solid var(--line);color:var(--text);
+    border-radius:10px;padding:10px 12px;font-size:14px;outline:none;
+  }
+  .count{color:var(--muted);font-size:13px;white-space:nowrap}
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
+    gap:16px;
+  }
+  .card{
+    background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px 18px 16px;
+    display:flex;flex-direction:column;gap:10px;
+    transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{
+    transform:translateY(-3px);
+    border-color:#3a4356;
+    box-shadow:0 12px 30px rgba(0,0,0,.45);
+  }
+  .top{display:flex;align-items:flex-start;gap:12px}
+  .rank{
+    flex:none;
+    width:38px;height:38px;
+    display:grid;place-items:center;
+    border-radius:10px;
+    background:rgba(245,197,24,.12);
+    border:1px solid rgba(245,197,24,.28);
+    color:var(--gold);
+    font-weight:800;font-size:15px;
+    font-variant-numeric:tabular-nums;
+  }
+  .titles{min-width:0}
+  .zh{
+    font-size:17px;font-weight:700;line-height:1.4;
+    overflow-wrap:anywhere;
+  }
+  .en{
+    color:var(--muted);font-size:12.5px;line-height:1.4;
+    overflow-wrap:anywhere;
+  }
+  .desc{font-size:14px;color:#c9cfdd;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:auto;padding-top:4px}
+  .tag{
+    font-size:11.5px;color:var(--muted);
+    background:#11151d;border:1px solid var(--line);
+    border-radius:999px;padding:3px 9px;
+  }
+  .years{font-variant-numeric:tabular-nums}
+  .imdb{
+    display:inline-flex;align-items:center;gap:6px;
+    text-decoration:none;
+    background:var(--gold);color:#111;
+    font-weight:800;font-size:13px;
+    padding:5px 11px;border-radius:8px;
+    margin-left:auto;white-space:nowrap;
+  }
+  .imdb:hover{filter:brightness(1.1)}
+  .imdb.none{background:#2a3040;color:var(--muted);font-weight:600}
+  footer{
+    margin-top:48px;padding-top:24px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:12.5px;
+  }
+  footer a{color:var(--accent)}
+  @media (max-width:520px){
+    .grid{grid-template-columns:1fr}
+    header.hero{padding:40px 0 24px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <span class="kicker">The New York Times</span>
+    <h1>21 世纪最佳 <em>100 部电视剧</em></h1>
+    <p class="sub">
+      《纽约时报》邀请 516 位演员、编剧、导演与制片人投票选出自己最爱的 10 部 2000 年之后首播的剧集，
+      再经两两对决排出名次（《黑道家族》因 1999 年首播未参评）。
+      下列卡片为完整榜单，附中文简介与 IMDb 评分、链接。
+    </p>
+  </header>
+
+  <div class="toolbar">
+    <div class="inner">
+      <input id="q" type="search" placeholder="搜索剧名 / 类型 / 年份，例如：罪案、2019、科幻">
+      <select id="sortsel">
+        <option value="rank">按榜单排名</option>
+        <option value="rating">按 IMDb 评分</option>
+        <option value="years">按首播年份</option>
+      </select>
+      <span class="count" id="count"></span>
+    </div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <footer>
+    数据来源：The New York Times “100 Best TV Shows of the 21st Century”（2026-09-25）；
+    IMDb 评分取自 <a href="https://www.imdb.com/" target="_blank" rel="noopener">IMDb</a>，评分为采集时刻的即时值，可能随时间变动。
+  </footer>
+</div>
+
+<script>
+const SHOWS = [{"rank":1,"en":"Breaking Bad","zh":"绝命毒师","years":"2008–2013","tt":"tt0903747","rating":"9.5","genres":"Crime, Drama, Thriller","desc":"新墨西哥州的高中化学老师沃尔特·怀特身患肺癌后，为给家人留下财产而与昔日学生合伙制造贩卖冰毒，一步步坠入犯罪深渊。"},{"rank":2,"en":"The Wire","zh":"火线","years":"2002–2008","tt":"tt0306414","rating":"9.3","genres":"Crime, Drama, Thriller","desc":"以巴尔的摩为舞台，从毒品交易链条切入，呈现警方与毒枭的较量，并逐年扩展到码头、学校、媒体与市政系统。"},{"rank":3,"en":"Mad Men","zh":"广告狂人","years":"2007–2015","tt":"tt0804503","rating":"8.7","genres":"Drama","desc":"以1960年代纽约为背景，聚焦麦迪逊大道广告公司里才华横溢却身世成谜的创意总监唐·德雷珀的职场与生活。"},{"rank":4,"en":"Succession","zh":"继承之战","years":"2018–2023","tt":"tt7660850","rating":"8.8","genres":"Comedy, Drama","desc":"掌控全球传媒帝国的罗伊家族因老掌门人洛根退位而陷入动荡，四个子女为争夺继承权明争暗斗。"},{"rank":5,"en":"Fleabag","zh":"伦敦生活","years":"2016–2019","tt":"tt5687612","rating":"8.7","genres":"Comedy, Drama","desc":"伦敦一名口无遮掩的年轻女子在经营咖啡馆与处理家庭、感情的同时，对着镜头吐露内心，直面好友离世留下的创伤。"},{"rank":6,"en":"Game of Thrones","zh":"权力的游戏","years":"2011–2019","tt":"tt0944947","rating":"9.2","genres":"Action, Adventure, Drama","desc":"维斯特洛大陆上九大家族为争夺铁王座相互厮杀，同时沉睡千年的异鬼威胁重新逼近北方长城。"},{"rank":7,"en":"Veep","zh":"副总统","years":"2012–2019","tt":"tt1759761","rating":"8.4","genres":"Comedy","desc":"前参议员塞琳娜·迈耶就任美国副总统后发现权力形同虚设，与一班幕僚在华盛顿的荒唐政治日常中挣扎。"},{"rank":8,"en":"30 Rock","zh":"我为喜剧狂","years":"2006–2013","tt":"tt0496424","rating":"8.3","genres":"Comedy","desc":"纽约一档喜剧综艺节目的首席编剧丽兹·莱蒙要同时应付新老板的干预、明星的胡闹和剧组的混乱。"},{"rank":9,"en":"Curb Your Enthusiasm","zh":"抑制热情","years":"2000–2024","tt":"tt0264235","rating":"8.8","genres":"Comedy","desc":"拉里·大卫在剧中饰演夸张版的自己，以即兴方式展现日常生活里的小事如何引发一连串社交灾难。"},{"rank":10,"en":"Atlanta","zh":"亚特兰大","years":"2016–2022","tt":"tt4288182","rating":"8.6","genres":"Comedy, Drama, Music","desc":"表兄弟厄恩与说唱歌手阿尔弗雷德在亚特兰大的嘻哈圈闯荡，途中直面种族、贫困与身份等现实问题。"},{"rank":11,"en":"The Office","zh":"办公室（美版）","years":"2005–2013","tt":"tt0386676","rating":"9.0","genres":"Comedy","desc":"以伪纪录片手法拍摄斯克兰顿一家纸业分公司的日常，围绕自恋的区域经理迈克尔与同事们的荒诞职场生活展开。"},{"rank":12,"en":"Arrested Development","zh":"发展受阻","years":"2003–2019","tt":"tt0367279","rating":"8.6","genres":"Comedy","desc":"父亲因诈骗入狱后，理性的次子迈克尔被逼接管家族企业，不得不应付一群自私又荒唐至极的亲人。"},{"rank":13,"en":"Girls","zh":"衰姐们","years":"2012–2017","tt":"tt1723816","rating":"7.4","genres":"Comedy, Drama","desc":"剧集围绕作家汉娜与三位闺蜜在纽约打拼的生活，写实地呈现年轻女性在事业、爱情与友谊中的迷茫与野蛮生长。"},{"rank":14,"en":"Friday Night Lights","zh":"胜利之光","years":"2006–2011","tt":"tt0758745","rating":"8.7","genres":"Drama, Sport","desc":"在德克萨斯小镇迪伦，高中橄榄球队在教练埃里克·泰勒带领下征战赛场，小镇的荣耀与困境也随之起伏。"},{"rank":15,"en":"Six Feet Under","zh":"六尺之下","years":"2001–2005","tt":"tt0248654","rating":"8.7","genres":"Comedy, Drama","desc":"费舍尔家族经营洛杉矶一家殡仪馆，每集开头的死者都映照着这家人面对死亡、爱与人生意义的困惑。"},{"rank":16,"en":"The Office","zh":"办公室（英版）","years":"2001–2003","tt":"tt0290978","rating":"8.5","genres":"Comedy, Drama","desc":"BBC伪纪录片聚焦斯劳一家纸业分公司面临裁撤的危机，镜头记录下经理大卫·布伦特与员工的尴尬日常。"},{"rank":17,"en":"The Americans","zh":"美国谍梦","years":"2013–2018","tt":"tt2149175","rating":"8.4","genres":"Crime, Drama, Mystery","desc":"冷战时期，两名苏联克格勃特工伪装成华盛顿郊区的一对普通夫妻，一边执行任务一边维系摇摇欲坠的婚姻。"},{"rank":18,"en":"I May Destroy You","zh":"我可以毁掉你","years":"2020","tt":"tt11204260","rating":"8.1","genres":"Drama","desc":"伦敦女作家阿拉贝拉在遭遇迷奸后重建记忆与自我，剧集围绕性同意、创伤与现代约会文化反复追问。"},{"rank":19,"en":"Chernobyl","zh":"切尔诺贝利","years":"2019","tt":"tt7366338","rating":"9.3","genres":"Drama, History, Thriller","desc":"1986年切尔诺贝利核电站发生爆炸，消防员、科学家与各级官员在灾难真相的重压下作出惨烈的抉择与牺牲。"},{"rank":20,"en":"The Crown","zh":"王冠","years":"2016–2023","tt":"tt4786824","rating":"8.6","genres":"Biography, Drama, History","desc":"剧集跨越数十年讲述伊丽莎白二世的统治，将英国王室内部的情感纠葛与二十世纪下半叶的重大历史串联起来。"},{"rank":21,"en":"The White Lotus","zh":"白莲花度假村","years":"2021–","tt":"tt13406094","rating":"8.0","genres":"Comedy, Drama","desc":"一周之内，热带度假村里富有的住客与员工在一场场冲突中暴露欲望与阶级矛盾。"},{"rank":22,"en":"Lost","zh":"迷失","years":"2004–2010","tt":"tt0411008","rating":"8.3","genres":"Adventure, Drama, Fantasy","desc":"一架客机坠毁在南太平洋的荒岛上，幸存者们在求生的同时揭开这座岛屿深藏的秘密。"},{"rank":23,"en":"The Comeback","zh":"归来记","years":"2005–","tt":"tt0434672","rating":"7.9","genres":"Comedy","desc":"过气情景喜剧明星瓦莱丽靠真人秀镜头试图重返演艺圈，却不断遭遇羞辱与自我消耗。"},{"rank":24,"en":"Deadwood","zh":"朽木","years":"2004–2006","tt":"tt0348914","rating":"8.6","genres":"Crime, Drama, History","desc":"1870年代南达科他州的淘金营地中，枪手、妓院老板与商人围绕权力与金子互相倾轧。"},{"rank":25,"en":"The Leftovers","zh":"守望尘世","years":"2014–2017","tt":"tt2699128","rating":"8.3","genres":"Drama, Fantasy, Mystery","desc":"全球2%人口在一瞬间离奇消失，三年后纽约小镇的居民仍在寻找继续活下去的意义。"},{"rank":26,"en":"Black Mirror","zh":"黑镜","years":"2011–","tt":"tt2085059","rating":"8.7","genres":"Crime, Drama, Mystery","desc":"一部部独立的讽刺寓言，借近未来的科技映照出人类的偏执、恐惧与技术依赖。"},{"rank":27,"en":"Better Call Saul","zh":"风骚律师","years":"2015–2022","tt":"tt3032476","rating":"9.0","genres":"Crime, Drama","desc":"阿尔伯克基的落魄律师吉米·麦吉尔在挣扎求存中一步步滑向圆滑世故的索尔·古德曼。"},{"rank":28,"en":"Band of Brothers","zh":"兄弟连","years":"2001","tt":"tt0185906","rating":"9.4","genres":"Action, Drama, History","desc":"二战欧洲战场上，美军101空降师E连从诺曼底登陆一路打到战争结束的真实历程。"},{"rank":29,"en":"Key & Peele","zh":"基和皮尔","years":"2012–2015","tt":"tt1981558","rating":"8.3","genres":"Comedy","desc":"基根-迈克尔·基与乔丹·皮尔在演播厅观众面前，以短剧和短片调侃美国的流行文化。"},{"rank":30,"en":"Severance","zh":"人生切割术","years":"2022–","tt":"tt11280740","rating":"8.6","genres":"Drama, Mystery, Sci-Fi","desc":"卢蒙公司的员工接受记忆分割手术，上班与生活的两个人格互不知情，马克带队揭开真相。"},{"rank":31,"en":"Survivor","zh":"幸存者","years":"2000–","tt":"tt0239195","rating":"7.6","genres":"Adventure, Game-Show, Reality-TV","desc":"一群陌生人被放逐到荒岛，仅靠双手求生、结盟与投票淘汰，最后的独存者赢走百万美元。"},{"rank":32,"en":"Andor","zh":"安多","years":"2022–2025","tt":"tt9253284","rating":"8.6","genres":"Adventure, Drama, Fantasy","desc":"在帝国统治日益严酷的年代，小偷卡西安·安多走上反抗之路，最终成为同盟的谍报英雄。"},{"rank":33,"en":"Enlightened","zh":"顿悟人生","years":"2011–2013","tt":"tt1509004","rating":"7.5","genres":"Comedy, Drama","desc":"一位自我毁灭的公司职员经历精神觉醒，决心过开悟的生活，却在家中与公司掀起阵阵风波。"},{"rank":34,"en":"Schitt's Creek","zh":"富家穷路","years":"2015–2020","tt":"tt3526078","rating":"8.5","genres":"Comedy","desc":"被骗破产的罗斯一家只剩一座小镇可去，这群曾经的富人迁入乡野，在文化冲突中重建生活。"},{"rank":35,"en":"True Detective","zh":"真探","years":"2014–","tt":"tt2356777","rating":"8.8","genres":"Crime, Drama, Mystery","desc":"诗选式罪案剧，每季由不同警探调查离奇凶案，案件牵出执法者自身与体制的隐秘往事。"},{"rank":36,"en":"The Pitt","zh":"匹兹堡医护前线","years":"2025–","tt":"tt31938062","rating":"8.9","genres":"Drama","desc":"匹兹堡一家医院急诊科的十五小时：医护在个人危机、职场政治与生死抢救之间疲于奔命。"},{"rank":37,"en":"Battlestar Galactica","zh":"太空堡垒卡拉狄加","years":"2004–2009","tt":"tt0407362","rating":"8.7","genres":"Action, Adventure, Drama","desc":"赛昂人突袭摧毁十二个殖民地，老战舰卡拉狄加护送残存人类舰队，寻找传说中第十三殖民地地球。"},{"rank":38,"en":"Homeland","zh":"国土安全","years":"2011–2020","tt":"tt1796960","rating":"8.3","genres":"Crime, Drama, Mystery","desc":"患有双相情感障碍的中情局女探员坚信一名获救战俘已被策反，暗中追踪他可能策划的恐袭。"},{"rank":39,"en":"Watchmen","zh":"守望者","years":"2019","tt":"tt7049682","rating":"8.2","genres":"Crime, Drama, Mystery","desc":"在蒙面义警被视为罪犯的平行美国，女警安吉拉调查同事遇害，揭开塔尔萨的种族仇恨与阴谋。"},{"rank":40,"en":"Adolescence","zh":"混沌少年时","years":"2025","tt":"tt31806037","rating":"8.1","genres":"Crime, Drama, Thriller","desc":"十三岁男孩被控杀死同班同学，家人、心理医生与办案警探追问真相，四集各以一镜到底拍摄。"},{"rank":41,"en":"Louie","zh":"路易不容易","years":"2010–2015","tt":"tt1492966","rating":"8.5","genres":"Comedy, Drama","desc":"讲述纽约单口喜剧演员路易在离婚后独自抚养两个女儿，把日常琐事与舞台段子交织成黑色幽默。"},{"rank":42,"en":"Hacks","zh":"Hacks（天后与实习生）","years":"2021–2026","tt":"tt11815682","rating":"8.2","genres":"Comedy, Drama","desc":"拉斯维加斯传奇喜剧演员黛博拉与被封杀的年轻编剧阿瓦，在互相嫌弃中结成一段毒舌又动人的师徒关系。"},{"rank":43,"en":"Peaky Blinders","zh":"浴血黑帮","years":"2013–2022","tt":"tt2442560","rating":"8.7","genres":"Crime, Drama","desc":"一战后的英国伯明翰，谢尔比家族的黑帮在剃刀帽檐下扩张势力，首领汤米在暴力与野心间周旋。"},{"rank":44,"en":"BoJack Horseman","zh":"马男波杰克","years":"2014–2020","tt":"tt3398228","rating":"8.8","genres":"Animation, Comedy, Drama","desc":"过气情景喜剧明星波杰克是一匹拟人化的马，在好莱坞的酗酒、抑郁与自我毁灭中挣扎着寻求救赎。"},{"rank":45,"en":"Happy Valley","zh":"幸福谷","years":"2014–2023","tt":"tt3428912","rating":"8.5","genres":"Crime, Drama, Thriller","desc":"约克郡警长凯瑟琳在小镇打击毒品与犯罪，同时面对家庭创伤与早已埋下的私人恩怨。"},{"rank":46,"en":"Broad City","zh":"大城小妞","years":"2014–2019","tt":"tt2578560","rating":"8.4","genres":"Comedy","desc":"两个二十多岁的闺蜜在纽约闯荡，把打工、约会和租房这些琐碎日常过得荒诞又失控。"},{"rank":47,"en":"Twin Peaks: The Return","zh":"双峰：回归","years":"2017","tt":"tt4093826","rating":"8.5","genres":"Crime, Drama, Horror","desc":"联邦探员库珀在小镇双峰消失二十五年后重返人间，围绕谋杀与超自然力量展开迷雾重重的追查。"},{"rank":48,"en":"House of Cards","zh":"纸牌屋","years":"2013–2018","tt":"tt1856010","rating":"8.6","genres":"Drama, Thriller","desc":"众议员弗兰克·安德伍德与妻子克莱尔用权谋与背叛一路爬向白宫，揭开华盛顿的冷血政治游戏。"},{"rank":49,"en":"Normal People","zh":"正常人","years":"2020","tt":"tt9059760","rating":"8.4","genres":"Drama, Romance","desc":"爱尔兰小镇的中学同学康奈尔与玛丽安，从校园到都柏林大学，在阶级与自尊间反复分合地相爱。"},{"rank":50,"en":"Parks and Recreation","zh":"公园与游憩","years":"2009–2015","tt":"tt1266020","rating":"8.6","genres":"Comedy","desc":"印第安纳州小镇帕尼的公务员莱斯利带着同事想把废矿坑改成公园，用乐观对抗荒诞的地方官僚。"},{"rank":51,"en":"The Good Place","zh":"善地","years":"2016–2020","tt":"tt4955642","rating":"8.2","genres":"Comedy, Drama, Fantasy","desc":"生前品行不端的女销售埃莉诺死后误入天堂般的“善地”，为留下来不得不藏起过去，重新学习做人。"},{"rank":52,"en":"Downton Abbey","zh":"唐顿庄园","years":"2010–2015","tt":"tt1606375","rating":"8.7","genres":"Drama, Romance","desc":"二十世纪初英国庄园里，贵族克劳利一家与楼下的仆人们共同经历遗产纷争、情感起落与时代变迁。"},{"rank":53,"en":"Stranger Things","zh":"怪奇物语","years":"2016–2025","tt":"tt4574334","rating":"8.6","genres":"Drama, Fantasy, Horror","desc":"1980年代印第安纳州小镇上，一群少年在伙伴失踪后遭遇超自然力量与秘密实验，揭开层层离奇谜团。"},{"rank":54,"en":"The Bureau","zh":"传奇办公室","years":"2015–2020","tt":"tt4063800","rating":"8.7","genres":"Drama, Thriller","desc":"法国对外安全总局的“传奇办公室”派遣卧底特工长期潜伏海外，讲述他们在假身份与真实情感间的挣扎。"},{"rank":55,"en":"Insecure","zh":"不安感","years":"2016–2021","tt":"tt5024912","rating":"8.1","genres":"Comedy, Drama, Romance","desc":"洛杉矶黑人女性伊萨与闺蜜莫莉在工作、恋爱和友谊中跌跌撞撞，直面现代生活的种种尴尬与不安。"},{"rank":56,"en":"Nathan for You","zh":"拯救小生意","years":"2013–2017","tt":"tt2297757","rating":"8.9","genres":"Documentary, Comedy","desc":"手握商学学位的喜剧人内森·菲尔德为真实小店老板提供荒诞离谱的营销方案，一本正经地帮他们扭亏为盈。"},{"rank":57,"en":"I Think You Should Leave with Tim Robinson","zh":"你该走了","years":"2019–2023","tt":"tt10050772","rating":"8.1","genres":"Comedy","desc":"蒂姆·罗宾逊主演的短剧集，每个小品都由一个死不认错的怪人把场面推到所有人都恨不得立刻离场的尴尬高潮。"},{"rank":58,"en":"Chappelle's Show","zh":"查普尔秀","years":"2003–2006","tt":"tt0353049","rating":"8.8","genres":"Comedy, Music","desc":"喜剧演员戴夫·查普尔主持的小品综艺，以夸张段子和明星模仿，戏仿美国种族与流行文化中的荒诞之处。"},{"rank":59,"en":"PEN15","zh":"青春Pen15","years":"2019–2021","tt":"tt8324422","rating":"8.1","genres":"Comedy, Drama","desc":"成年演员亲自出演十三岁的自己，回到2000年的初中校园，在一群真实的同龄人中间重历青春期的尴尬。"},{"rank":60,"en":"Peep Show","zh":"窥男志","years":"2003–2015","tt":"tt0387764","rating":"8.7","genres":"Comedy","desc":"伦敦一对性格迥异的室友马克与杰里米合租过日子，全程以第一人称视角听见他们不断翻涌的内心独白。"},{"rank":61,"en":"RuPaul's Drag Race","zh":"鲁保罗变装皇后秀","years":"2009–","tt":"tt1353056","rating":"8.5","genres":"Game-Show, Reality-TV","desc":"变装皇后鲁保罗主持的选秀竞赛，选手每季通过妆容、走秀与才艺比拼争夺美国下一位变装巨星。"},{"rank":62,"en":"Slow Horses","zh":"流人","years":"2022–","tt":"tt5875444","rating":"8.3","genres":"Drama, Thriller","desc":"由加里·奥德曼领衔的Apple TV+谍战剧，一群被贬到斯劳部门的军情五处废柴特工在层层迷雾中保卫英国。"},{"rank":63,"en":"The Thick of It","zh":"幕后危机","years":"2005–2012","tt":"tt0459159","rating":"8.7","genres":"Comedy","desc":"BBC政治讽刺喜剧，新闻官马尔科姆·塔克以粗口与铁腕操控社会事务部大臣和混乱的政府日常。"},{"rank":64,"en":"Anthony Bourdain: Parts Unknown","zh":"安东尼·波登：未知之地","years":"2013–2018","tt":"tt2845786","rating":"8.9","genres":"Documentary, Adventure","desc":"CNN美食旅行纪录片，名厨安东尼·波登走进各国秘境，用当地的食物、文化与政治冲突呈现真实风土。"},{"rank":65,"en":"Mare of Easttown","zh":"东城梅尔","years":"2021","tt":"tt10155688","rating":"8.4","genres":"Crime, Drama, Mystery","desc":"HBO限定剧，宾夕法尼亚小镇女警梅尔在调查一名年轻母亲命案的同时，还要面对自家分崩离析的生活。"},{"rank":66,"en":"The Rehearsal","zh":"人生彩排","years":"2022–","tt":"tt10802170","rating":"8.5","genres":"Documentary, Comedy","desc":"内森·菲尔德在HBO打造的真人实验喜剧，他搭建逼真布景与演员，让普通人提前排练人生关键时刻。"},{"rank":67,"en":"The Handmaid's Tale","zh":"使女的故事","years":"2017–2025","tt":"tt5834204","rating":"8.3","genres":"Drama, Sci-Fi, Thriller","desc":"改编自阿特伍德小说的反乌托邦剧集，在神权国家基列国中，使女奥芙弗雷德为生存与自由挣扎反抗。"},{"rank":68,"en":"Ozark","zh":"黑钱胜地","years":"2017–2022","tt":"tt5071412","rating":"8.4","genres":"Crime, Drama, Thriller","desc":"理财顾问马蒂拖家带口迁往密苏里奥索卡湖区，为墨西哥毒枭洗钱，周旋于黑帮与地方势力之间。"},{"rank":69,"en":"Anthony Bourdain: No Reservations","zh":"安东尼·波登：不设限","years":"2005–2012","tt":"tt0475900","rating":"8.5","genres":"Documentary, Adventure, Reality-TV","desc":"旅游频道美食旅行节目，主厨安东尼·波登走遍世界角落，品尝街头异味美食并直白记录当地人生。"},{"rank":70,"en":"The Shield","zh":"盾牌","years":"2002–2008","tt":"tt0286486","rating":"8.7","genres":"Crime, Drama, Thriller","desc":"FX警匪剧，洛杉矶警局维克·麦基带领的突击队以暴力与腐败手段维持街区秩序并中饱私囊。"},{"rank":71,"en":"Beef","zh":"怒呛人生","years":"2023","tt":"tt14403178","rating":"8.0","genres":"Comedy, Drama","desc":"一场停车场的小摩擦，让两个洛杉矶陌生人陷入互相纠缠的报复，揭开各自内心的愤怒与孤独。"},{"rank":72,"en":"Squid Game","zh":"鱿鱼游戏","years":"2021–2025","tt":"tt10919420","rating":"7.9","genres":"Action, Crime, Drama","desc":"数百名负债累累的参赛者接受神秘邀请，在儿童游戏中搏命，只为争夺诱人的巨额奖金。"},{"rank":73,"en":"Barry","zh":"巴瑞","years":"2018–2023","tt":"tt5348176","rating":"8.3","genres":"Action, Comedy, Crime","desc":"一名中西部杀手赴洛杉矶执行任务，却迷上了表演课，想在舞台与犯罪之间重新开始人生。"},{"rank":74,"en":"The Bear","zh":"熊家餐馆","years":"2022–","tt":"tt14452776","rating":"8.5","genres":"Comedy, Drama","desc":"一位高级餐厅的年轻厨师回到芝加哥，接手兄长留下的三明治店，在高压力的厨房中重整团队。"},{"rank":75,"en":"Ted Lasso","zh":"足球教练","years":"2020–","tt":"tt10986410","rating":"8.7","genres":"Comedy, Drama, Sport","desc":"美国橄榄球教练泰德·拉索被请去执教一支英格兰足球俱乐部，用乐观与真诚感化球员和老板。"},{"rank":76,"en":"Somebody Somewhere","zh":"某人某地","years":"2022–2024","tt":"tt12759100","rating":"8.2","genres":"Comedy, Drama","desc":"回到堪萨斯小镇的中年女子山姆在丧亲与归属之间挣扎，在一群格格不入的朋友中找回自己。"},{"rank":77,"en":"Modern Family","zh":"摩登家庭","years":"2009–2020","tt":"tt1442437","rating":"8.5","genres":"Comedy, Drama, Romance","desc":"洛杉矶三个相互关联的家庭——老夫少妻、同志伴侣与传统之家——以各自搞笑的方式应对生活。"},{"rank":78,"en":"It's Always Sunny in Philadelphia","zh":"费城永远阳光灿烂","years":"2005–","tt":"tt0472954","rating":"8.8","genres":"Comedy","desc":"费城一家爱尔兰酒吧的五名自私损友不断炮制荒唐骗局，彼此算计却从不吸取教训。"},{"rank":79,"en":"The Good Wife","zh":"傲骨贤妻","years":"2009–2016","tt":"tt1442462","rating":"8.3","genres":"Crime, Drama, Mystery","desc":"丈夫因贪腐丑闻入狱后，阿丽西娅重返律所担任辩护律师，在职场与家庭中重新站稳脚跟。"},{"rank":80,"en":"How To with John Wilson","zh":"约翰·威尔逊的十万个怎么做","years":"2020–2023","tt":"tt10801534","rating":"8.7","genres":"Documentary, Comedy","desc":"焦虑的纽约人约翰·威尔逊用镜头记录城市日常，一边教人生活小技巧，一边直面自己的困境。"},{"rank":81,"en":"The Queen's Gambit","zh":"后翼弃兵","years":"2020","tt":"tt10048342","rating":"8.5","genres":"Drama","desc":"孤儿贝丝·哈蒙在1960年代美国展露国际象棋天赋，一路挑战男性主导的棋坛，也深陷药物与酒精成瘾。"},{"rank":82,"en":"Better Things","zh":"更好的事","years":"2016–2022","tt":"tt4370596","rating":"7.9","genres":"Comedy, Drama","desc":"一名女演员独自抚养三个女儿，在忙碌的演艺工作与家庭生活之间疲于奔命，故事带有主演本人的半自传色彩。"},{"rank":83,"en":"Justified","zh":"火线警探","years":"2010–2015","tt":"tt1489428","rating":"8.6","genres":"Action, Crime, Drama","desc":"联邦法警雷兰·吉文斯被调回肯塔基州哈兰老家，以自己独特的方式在犯罪横行的矿区执法。"},{"rank":84,"en":"Planet Earth","zh":"地球脉动","years":"2006","tt":"tt0795176","rating":"9.4","genres":"Documentary, Family","desc":"BBC自然纪录片，由大卫·爱登堡解说，历时四年在64个国家拍摄，逐集呈现地球各类栖息地的生命奇观。"},{"rank":85,"en":"The Great British Bake Off","zh":"英国家庭烘焙大赛","years":"2010–","tt":"tt1877368","rating":"8.6","genres":"Game-Show, Reality-TV","desc":"业余烘焙爱好者每周完成三项挑战，接受评委严格品评，争夺英国最佳业余烘焙师的称号。"},{"rank":86,"en":"Shōgun","zh":"幕府将军","years":"2024","tt":"tt2788316","rating":"8.6","genres":"Action, Adventure, Drama","desc":"1600年日本内战前夕，大名吉井虎长为争夺权力周旋于摄政评议会，一艘欧洲船的到来改变局势。"},{"rank":87,"en":"Reservation Dogs","zh":"保留地之犬","years":"2021–2023","tt":"tt13623580","rating":"8.3","genres":"Comedy, Crime","desc":"俄克拉何马州东部保留地的四名原住民少年偷抢骗攒钱，只为在挚友离世后离开小镇前往加州。"},{"rank":88,"en":"Dexter","zh":"嗜血法医","years":"2006–2013","tt":"tt0773262","rating":"8.6","genres":"Crime, Drama, Mystery","desc":"迈阿密警局血迹分析员德克斯特白天协助破案，夜里化身连环杀手，只依循自己内心的准则行事。"},{"rank":89,"en":"Baby Reindeer","zh":"驯鹿宝贝","years":"2024","tt":"tt13649112","rating":"7.7","genres":"Biography, Comedy, Drama","desc":"喜剧演员兼酒保唐尼被一名女跟踪者缠上，这段扭曲关系迫使他直面埋藏已久的创伤记忆。"},{"rank":90,"en":"Eastbound & Down","zh":"体育老师笑传","years":"2009–2013","tt":"tt0866442","rating":"8.2","genres":"Comedy, Drama, Sport","desc":"过气大联盟投手肯尼·鲍尔斯回到北卡罗来纳老家，在昔日中学当起体育老师，闹出无数荒唐事。"},{"rank":91,"en":"Catastrophe","zh":"大祸临头","years":"2015–2019","tt":"tt4374208","rating":"8.2","genres":"Comedy","desc":"美国男人罗布在伦敦出差时与爱尔兰女子莎伦短暂相恋并使她怀孕，两人遂决定认真经营这段意外开始的家庭关系。"},{"rank":92,"en":"The Night Of","zh":"罪夜之奔","years":"2016","tt":"tt2401256","rating":"8.4","genres":"Crime, Drama, Mystery","desc":"巴基斯坦裔青年纳西尔在纽约狂欢一夜后醒来，发现身旁女子被刺身亡，自己被控谋杀，庭审与狱中命运由此展开。"},{"rank":93,"en":"Station Eleven","zh":"第11号站","years":"2021","tt":"tt10574236","rating":"7.5","genres":"Adventure, Drama, Fantasy","desc":"一场毁灭性流感令文明崩塌二十年后，幸存者组成流动剧团与聚落，在废土上重建艺术、记忆与彼此的联系。"},{"rank":94,"en":"The Diplomat","zh":"外交官","years":"2023–","tt":"tt17491088","rating":"8.0","genres":"Drama, Thriller","desc":"资深外交官凯特·惠勒临危受命出任驻英大使，在突发的国际危机中斡旋，同时面对婚姻与仕途的双重震荡。"},{"rank":95,"en":"House","zh":"豪斯医生","years":"2004–2012","tt":"tt0412142","rating":"8.7","genres":"Drama","desc":"脾气古怪的诊断医学专家豪斯医生带领年轻团队，以非常规手段破解一桩桩疑难病例，自己却深陷止痛药成瘾。"},{"rank":96,"en":"Halt and Catch Fire","zh":"奔腾年代","years":"2014–2017","tt":"tt2543312","rating":"8.4","genres":"Drama","desc":"一群工程师与推销员在八十年代美国个人电脑产业兴起之际创业，在野心与情谊之间赌上各自的前途。"},{"rank":97,"en":"Community","zh":"废柴联盟","years":"2009–2015","tt":"tt1439629","rating":"8.5","genres":"Comedy","desc":"被吊销律师资格的杰夫被迫进入格林代尔社区大学，与一群古怪师生组成学习小组，闹出无数荒诞笑话。"},{"rank":98,"en":"The OA","zh":"先见之明","years":"2016–2019","tt":"tt4635282","rating":"7.8","genres":"Drama, Fantasy, Mystery","desc":"失踪七年的失明女子普雷莉突然归家且重见光明，她向众人讲述自己被囚禁、濒死与穿越维度的离奇经历。"},{"rank":99,"en":"Gilmore Girls","zh":"吉尔莫女孩","years":"2000–2007","tt":"tt0238784","rating":"8.2","genres":"Comedy, Drama","desc":"单亲母亲罗蕾莱与十几岁的女儿罗瑞生活在康涅狄格州星谷小镇，两人亦母亦友地面对爱情、学业与成长。"},{"rank":100,"en":"Scandal","zh":"丑闻","years":"2012–2018","tt":"tt1837576","rating":"7.7","genres":"Drama, Thriller","desc":"前白宫通讯主管奥利维娅·波普创办危机公关公司，替华府权贵掩盖丑闻，而她与总统的私情同样致命。"}];
+
+const grid = document.getElementById('grid');
+const q = document.getElementById('q');
+const sortsel = document.getElementById('sortsel');
+const count = document.getElementById('count');
+
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function card(s){
+  const has = s.tt && s.rating;
+  const href = s.tt ? `https://www.imdb.com/title/${encodeURIComponent(s.tt)}/` : null;
+  const rate = has
+    ? `<a class="imdb" href="${href}" target="_blank" rel="noopener" title="在 IMDb 查看">IMDb ${esc(s.rating)}</a>`
+    : (s.tt
+        ? `<a class="imdb none" href="${href}" target="_blank" rel="noopener">IMDb 页面</a>`
+        : `<span class="imdb none">暂无</span>`);
+  const genres = String(s.genres || '').split(',').map(x => x.trim()).filter(Boolean)
+    .slice(0,3).map(g => `<span class="tag">${esc(g)}</span>`).join('');
+  return `<article class="card" data-search="${esc((s.zh+' '+s.en+' '+s.genres+' '+s.years+' '+s.desc).toLowerCase())}">
+    <div class="top">
+      <div class="rank">${s.rank}</div>
+      <div class="titles">
+        <div class="zh">${esc(s.zh)}</div>
+        <div class="en">${esc(s.en)}</div>
+      </div>
+    </div>
+    <p class="desc">${esc(s.desc)}</p>
+    <div class="meta">
+      <span class="tag years">${esc(s.years)}</span>
+      ${genres}
+      ${rate}
+    </div>
+  </article>`;
+}
+
+const yearOf = s => parseInt(String(s.years).match(/\d{4}/)?.[0] || '9999', 10);
+
+function render(){
+  const kw = q.value.trim().toLowerCase();
+  let list = SHOWS.filter(s => !kw || String(s.__s).includes(kw));
+  const mode = sortsel.value;
+  if (mode === 'rating') list = list.slice().sort((a,b) => (parseFloat(b.rating)||0) - (parseFloat(a.rating)||0));
+  if (mode === 'years')  list = list.slice().sort((a,b) => yearOf(a) - yearOf(b));
+  grid.innerHTML = list.map(card).join('') || '<p style="color:var(--muted)">没有匹配的剧集。</p>';
+  count.textContent = `共 ${list.length} 部`;
+}
+
+SHOWS.forEach(s => s.__s = (s.zh+' '+s.en+' '+s.genres+' '+s.years+' '+s.desc).toLowerCase());
+q.addEventListener('input', render);
+sortsel.addEventListener('change', render);
+render();
+</script>
+</body>
+</html>
